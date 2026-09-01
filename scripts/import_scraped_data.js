@@ -10,19 +10,30 @@ const envPath = path.resolve(__dirname, '../.env.local');
 if (fs.existsSync(envPath)) {
   const envConfig = fs.readFileSync(envPath, 'utf-8');
   envConfig.split('\n').forEach((line) => {
-    const [key, ...values] = line.split('=');
-    if (key && values.length > 0) {
-      process.env[key.trim()] = values.join('=').trim();
+    const trimmed = line.trim();
+    if (trimmed && !trimmed.startsWith('#')) {
+      const [key, ...values] = trimmed.split('=');
+      if (key && values.length > 0) {
+        let val = values.join('=').trim();
+        // Remove quotes if any
+        if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) {
+          val = val.slice(1, -1);
+        }
+        process.env[key.trim()] = val;
+      }
     }
   });
 }
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+const supabaseKey =
+  process.env.SUPABASE_SERVICE_ROLE_KEY ||
+  process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ||
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
 if (!supabaseUrl || !supabaseKey || supabaseUrl.includes('placeholder')) {
   console.error('\n❌ Error: Missing NEXT_PUBLIC_SUPABASE_URL or API key in .env.local.');
-  console.error('Please configure your Supabase credentials in .env.local first.\n');
+  console.error('Please configure your real Supabase credentials in .env.local first.\n');
   process.exit(1);
 }
 
@@ -85,10 +96,8 @@ async function importData() {
 
   // Prepare batch insert
   const formattedWords = words.map((w, index) => {
-    // Auto-generate fallback distractors if not provided in scraped data
     let distractors = w.distractors || [];
     if (distractors.length === 0) {
-      // Pick other words' translations as distractors
       const otherWords = words.filter((_, i) => i !== index);
       distractors = otherWords.slice(0, 3).map((ow) => ow.translation);
       while (distractors.length < 3) {
