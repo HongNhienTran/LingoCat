@@ -1,0 +1,37 @@
+{
+  "deck": {
+    "title": "Oxford 3000 Essential Core",
+    "description": "Essential English words for everyday fluency, scraped from Oxford 3000 benchmark.",
+    "category": "General",
+    "difficulty": "intermediate"
+  },
+  "words": [
+    {
+      "term": "CHALLENGE",
+      "phonetic": "/ˈtʃæl.ɪndʒ/",
+      "translation": "Thử thách, thách thức",
+      "example_sentence": "This puzzle presents an interesting challenge for the team.",
+      "example_translation": "Câu đố này đưa ra một thử thách thú vị cho nhóm.",
+      "distractors": ["Cơ hội", "Thất bại", "Món quà"],
+      "difficulty_level": 2
+    },
+    {
+      "term": "EFFICIENCY",
+      "phonetic": "/ɪˈfɪʃ.ən.si/",
+      "translation": "Hiệu suất, tính hiệu quả",
+      "example_sentence": "We need to improve the energy efficiency of the building.",
+      "example_translation": "Chúng ta cần cải thiện hiệu quả sử dụng năng lượng của tòa nhà.",
+      "distractors": ["Sự lãng phí", "Tốc độ chậm", "Độ phức tạp"],
+      "difficulty_level": 3
+    },
+    {
+      "term": "GUARANTEE",
+      "phonetic": "/ˌɡær.ənˈtiː/",
+      "translation": "Bảo đảm, cam kết",
+      "example_sentence": "The manufacturer offers a two-year guarantee on this phone.",
+      "example_translation": "Nhà sản xuất cung cấp bảo hành hai năm cho điện thoại này.",
+      "distractors": ["Hủy bỏ", "Nghi ngờ", "Từ chối"],
+      "difficulty_level": 2
+    }
+  ]
+}
