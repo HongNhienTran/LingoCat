@@ -1,0 +1,40 @@
+{
+  "deck": {
+    "title": "Chủ đề Từ Vựng (Ví dụ: TOEIC 600 Essential Words)",
+    "description": "Danh sách từ vựng cào từ bảng 4 cột: STT, Từ vựng, Phiên âm, Nghĩa",
+    "category": "General",
+    "difficulty": "intermediate"
+  },
+  "words": [
+    {
+      "stt": 1,
+      "term": "COMMUTE",
+      "phonetic": "/kəˈmjuːt/",
+      "translation": "Đi lại (giữa nhà và nơi làm việc)"
+    },
+    {
+      "stt": 2,
+      "term": "EXPENSE",
+      "phonetic": "/ɪkˈspens/",
+      "translation": "Chi phí, phí tổn"
+    },
+    {
+      "stt": 3,
+      "term": "PRODUCTIVITY",
+      "phonetic": "/ˌprɒd.ʌkˈtɪv.ə.ti/",
+      "translation": "Năng suất lao động"
+    },
+    {
+      "stt": 4,
+      "term": "PROPOSAL",
+      "phonetic": "/prəˈpəʊ.zəl/",
+      "translation": "Đề xuất, bản kiến nghị"
+    },
+    {
+      "stt": 5,
+      "term": "URGENT",
+      "phonetic": "/ˈɜː.dʒənt/",
+      "translation": "Khẩn cấp, cấp bách"
+    }
+  ]
+}

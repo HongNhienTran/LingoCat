@@ -1,0 +1,3502 @@
+[
+  {
+    "topic": "Gia đình và mối quan hệ",
+    "stt": 1,
+    "word": "Family",
+    "pronunciation": "ˈfæməli",
+    "meaning": "Gia đình"
+  },
+  {
+    "topic": "Gia đình và mối quan hệ",
+    "stt": 2,
+    "word": "Parents",
+    "pronunciation": "ˈperənts",
+    "meaning": "Bố mẹ"
+  },
+  {
+    "topic": "Gia đình và mối quan hệ",
+    "stt": 3,
+    "word": "Siblings",
+    "pronunciation": "ˈsɪblɪŋz",
+    "meaning": "Anh chị em ruột"
+  },
+  {
+    "topic": "Gia đình và mối quan hệ",
+    "stt": 4,
+    "word": "Children",
+    "pronunciation": "ˈtʃɪldrən",
+    "meaning": "Con cái"
+  },
+  {
+    "topic": "Gia đình và mối quan hệ",
+    "stt": 5,
+    "word": "Grandparents",
+    "pronunciation": "ˈɡrændˌpɛrənts",
+    "meaning": "Ông bà"
+  },
+  {
+    "topic": "Gia đình và mối quan hệ",
+    "stt": 6,
+    "word": "Cousins",
+    "pronunciation": "ˈkʌzənz",
+    "meaning": "Anh chị em họ"
+  },
+  {
+    "topic": "Gia đình và mối quan hệ",
+    "stt": 7,
+    "word": "Nephew",
+    "pronunciation": "ˈnɛfju",
+    "meaning": "Cháu trai"
+  },
+  {
+    "topic": "Gia đình và mối quan hệ",
+    "stt": 8,
+    "word": "Niece",
+    "pronunciation": "niːs",
+    "meaning": "Cháu gái"
+  },
+  {
+    "topic": "Gia đình và mối quan hệ",
+    "stt": 9,
+    "word": "Aunt",
+    "pronunciation": "ænt",
+    "meaning": "Cô, dì"
+  },
+  {
+    "topic": "Gia đình và mối quan hệ",
+    "stt": 10,
+    "word": "Uncle",
+    "pronunciation": "ˈʌŋkəl",
+    "meaning": "Chú, bác"
+  },
+  {
+    "topic": "Gia đình và mối quan hệ",
+    "stt": 11,
+    "word": "Spouse",
+    "pronunciation": "spaʊs",
+    "meaning": "Vợ, chồng"
+  },
+  {
+    "topic": "Gia đình và mối quan hệ",
+    "stt": 12,
+    "word": "In-laws",
+    "pronunciation": "ɪn lɔz",
+    "meaning": "Bố mẹ chồng, bố mẹ vợ"
+  },
+  {
+    "topic": "Gia đình và mối quan hệ",
+    "stt": 13,
+    "word": "Brother-in-law",
+    "pronunciation": "ˈbrʌðər ɪn lɔ",
+    "meaning": "Anh rể, em chồng"
+  },
+  {
+    "topic": "Gia đình và mối quan hệ",
+    "stt": 14,
+    "word": "Sister-in-law",
+    "pronunciation": "ˈsɪstər ɪn lɔ",
+    "meaning": "Chị dâu, em vợ"
+  },
+  {
+    "topic": "Gia đình và mối quan hệ",
+    "stt": 15,
+    "word": "Nephew",
+    "pronunciation": "ˈnɛfju",
+    "meaning": "Cháu trai"
+  },
+  {
+    "topic": "Gia đình và mối quan hệ",
+    "stt": 16,
+    "word": "Niece",
+    "pronunciation": "niːs",
+    "meaning": "Cháu gái"
+  },
+  {
+    "topic": "Gia đình và mối quan hệ",
+    "stt": 17,
+    "word": "Son",
+    "pronunciation": "sʌn",
+    "meaning": "Con trai"
+  },
+  {
+    "topic": "Gia đình và mối quan hệ",
+    "stt": 18,
+    "word": "Daughter",
+    "pronunciation": "ˈdɔtər",
+    "meaning": "Con gái"
+  },
+  {
+    "topic": "Gia đình và mối quan hệ",
+    "stt": 19,
+    "word": "Brother",
+    "pronunciation": "ˈbrʌðər",
+    "meaning": "Anh/em trai"
+  },
+  {
+    "topic": "Gia đình và mối quan hệ",
+    "stt": 20,
+    "word": "Sister",
+    "pronunciation": "ˈsɪstər",
+    "meaning": "Chị/em gái"
+  },
+  {
+    "topic": "Sở thích và giải trí",
+    "stt": 1,
+    "word": "Hobby",
+    "pronunciation": "ˈhɑbi",
+    "meaning": "Sở thích"
+  },
+  {
+    "topic": "Sở thích và giải trí",
+    "stt": 2,
+    "word": "Sports",
+    "pronunciation": "spɔrts",
+    "meaning": "Thể thao"
+  },
+  {
+    "topic": "Sở thích và giải trí",
+    "stt": 3,
+    "word": "Music",
+    "pronunciation": "ˈmjuːzɪk",
+    "meaning": "Âm nhạc"
+  },
+  {
+    "topic": "Sở thích và giải trí",
+    "stt": 4,
+    "word": "Reading",
+    "pronunciation": "ˈriːdɪŋ",
+    "meaning": "Đọc sách"
+  },
+  {
+    "topic": "Sở thích và giải trí",
+    "stt": 5,
+    "word": "Painting",
+    "pronunciation": "ˈpeɪntɪŋ",
+    "meaning": "Vẽ tranh"
+  },
+  {
+    "topic": "Sở thích và giải trí",
+    "stt": 6,
+    "word": "Photography",
+    "pronunciation": "fəˈtɑːɡrəfi",
+    "meaning": "Nhiếp ảnh"
+  },
+  {
+    "topic": "Sở thích và giải trí",
+    "stt": 7,
+    "word": "Cooking",
+    "pronunciation": "ˈkʊkɪŋ",
+    "meaning": "Nấu ăn"
+  },
+  {
+    "topic": "Sở thích và giải trí",
+    "stt": 8,
+    "word": "Gardening",
+    "pronunciation": "ˈɡɑrdnɪŋ",
+    "meaning": "Làm vườn"
+  },
+  {
+    "topic": "Sở thích và giải trí",
+    "stt": 9,
+    "word": "Traveling",
+    "pronunciation": "ˈtrævəlɪŋ",
+    "meaning": "Du lịch"
+  },
+  {
+    "topic": "Sở thích và giải trí",
+    "stt": 10,
+    "word": "Dancing",
+    "pronunciation": "ˈdænsɪŋ",
+    "meaning": "Nhảy múa"
+  },
+  {
+    "topic": "Sở thích và giải trí",
+    "stt": 11,
+    "word": "Gaming",
+    "pronunciation": "ˈɡeɪmɪŋ",
+    "meaning": "Chơi game"
+  },
+  {
+    "topic": "Sở thích và giải trí",
+    "stt": 12,
+    "word": "Movies",
+    "pronunciation": "ˈmuːviz",
+    "meaning": "Phim"
+  },
+  {
+    "topic": "Sở thích và giải trí",
+    "stt": 13,
+    "word": "Theatre",
+    "pronunciation": "ˈθiːətər",
+    "meaning": "Nhà hát"
+  },
+  {
+    "topic": "Sở thích và giải trí",
+    "stt": 14,
+    "word": "Concert",
+    "pronunciation": "ˈkɒnsərt",
+    "meaning": "Buổi hòa nhạc"
+  },
+  {
+    "topic": "Sở thích và giải trí",
+    "stt": 15,
+    "word": "Art",
+    "pronunciation": "ɑrt",
+    "meaning": "Nghệ thuật"
+  },
+  {
+    "topic": "Sở thích và giải trí",
+    "stt": 16,
+    "word": "Writing",
+    "pronunciation": "ˈraɪtɪŋ",
+    "meaning": "Viết"
+  },
+  {
+    "topic": "Sở thích và giải trí",
+    "stt": 17,
+    "word": "Cycling",
+    "pronunciation": "ˈsaɪklɪŋ",
+    "meaning": "Đạp xe"
+  },
+  {
+    "topic": "Sở thích và giải trí",
+    "stt": 18,
+    "word": "Swimming",
+    "pronunciation": "ˈswɪmɪŋ",
+    "meaning": "Bơi lội"
+  },
+  {
+    "topic": "Sở thích và giải trí",
+    "stt": 19,
+    "word": "Hiking",
+    "pronunciation": "ˈhaɪkɪŋ",
+    "meaning": "Leo núi"
+  },
+  {
+    "topic": "Sở thích và giải trí",
+    "stt": 20,
+    "word": "Yoga",
+    "pronunciation": "ˈjoʊɡə",
+    "meaning": "Yoga"
+  },
+  {
+    "topic": "Thời tiết và mùa trong năm",
+    "stt": 1,
+    "word": "Weather",
+    "pronunciation": "ˈwɛðər",
+    "meaning": "Thời tiết"
+  },
+  {
+    "topic": "Thời tiết và mùa trong năm",
+    "stt": 2,
+    "word": "Temperature",
+    "pronunciation": "ˈtɛmp(ə)rətʃər",
+    "meaning": "Nhiệt độ"
+  },
+  {
+    "topic": "Thời tiết và mùa trong năm",
+    "stt": 3,
+    "word": "Sunny",
+    "pronunciation": "ˈsʌni",
+    "meaning": "Nắng"
+  },
+  {
+    "topic": "Thời tiết và mùa trong năm",
+    "stt": 4,
+    "word": "Cloudy",
+    "pronunciation": "ˈklaʊdi",
+    "meaning": "Mây"
+  },
+  {
+    "topic": "Thời tiết và mùa trong năm",
+    "stt": 5,
+    "word": "Rainy",
+    "pronunciation": "ˈreɪni",
+    "meaning": "Mưa"
+  },
+  {
+    "topic": "Thời tiết và mùa trong năm",
+    "stt": 6,
+    "word": "Snowy",
+    "pronunciation": "ˈsnoʊi",
+    "meaning": "Tuyết"
+  },
+  {
+    "topic": "Thời tiết và mùa trong năm",
+    "stt": 7,
+    "word": "Windy",
+    "pronunciation": "ˈwɪndi",
+    "meaning": "Gió"
+  },
+  {
+    "topic": "Thời tiết và mùa trong năm",
+    "stt": 8,
+    "word": "Stormy",
+    "pronunciation": "ˈstɔrmi",
+    "meaning": "Bão"
+  },
+  {
+    "topic": "Thời tiết và mùa trong năm",
+    "stt": 9,
+    "word": "Foggy",
+    "pronunciation": "ˈfɒɡi",
+    "meaning": "Sương mù"
+  },
+  {
+    "topic": "Thời tiết và mùa trong năm",
+    "stt": 10,
+    "word": "Season",
+    "pronunciation": "ˈsiːz(ə)n",
+    "meaning": "Mùa"
+  },
+  {
+    "topic": "Thời tiết và mùa trong năm",
+    "stt": 11,
+    "word": "Spring",
+    "pronunciation": "sprɪŋ",
+    "meaning": "Mùa xuân"
+  },
+  {
+    "topic": "Thời tiết và mùa trong năm",
+    "stt": 12,
+    "word": "Summer",
+    "pronunciation": "ˈsʌmər",
+    "meaning": "Mùa hè"
+  },
+  {
+    "topic": "Thời tiết và mùa trong năm",
+    "stt": 13,
+    "word": "Autumn",
+    "pronunciation": "ˈɔːtəm",
+    "meaning": "Mùa thu"
+  },
+  {
+    "topic": "Thời tiết và mùa trong năm",
+    "stt": 14,
+    "word": "Winter",
+    "pronunciation": "ˈwɪntər",
+    "meaning": "Mùa đông"
+  },
+  {
+    "topic": "Thời tiết và mùa trong năm",
+    "stt": 15,
+    "word": "January",
+    "pronunciation": "ˈdʒænjuˌɛri",
+    "meaning": "Tháng một"
+  },
+  {
+    "topic": "Thời tiết và mùa trong năm",
+    "stt": 16,
+    "word": "February",
+    "pronunciation": "ˈfɛbjuˌɛri",
+    "meaning": "Tháng hai"
+  },
+  {
+    "topic": "Thời tiết và mùa trong năm",
+    "stt": 17,
+    "word": "March",
+    "pronunciation": "mɑrtʃ",
+    "meaning": "Tháng ba"
+  },
+  {
+    "topic": "Thời tiết và mùa trong năm",
+    "stt": 18,
+    "word": "April",
+    "pronunciation": "ˈeɪprəl",
+    "meaning": "Tháng tư"
+  },
+  {
+    "topic": "Thời tiết và mùa trong năm",
+    "stt": 19,
+    "word": "May",
+    "pronunciation": "meɪ",
+    "meaning": "Tháng năm"
+  },
+  {
+    "topic": "Thời tiết và mùa trong năm",
+    "stt": 20,
+    "word": "June",
+    "pronunciation": "dʒun",
+    "meaning": "Tháng sáu"
+  },
+  {
+    "topic": "Thành phố và địa điểm du lịch",
+    "stt": 1,
+    "word": "City",
+    "pronunciation": "ˈsɪti",
+    "meaning": "Thành phố"
+  },
+  {
+    "topic": "Thành phố và địa điểm du lịch",
+    "stt": 2,
+    "word": "Town",
+    "pronunciation": "taʊn",
+    "meaning": "Thị trấn"
+  },
+  {
+    "topic": "Thành phố và địa điểm du lịch",
+    "stt": 3,
+    "word": "Capital",
+    "pronunciation": "ˈkæpɪtl",
+    "meaning": "Thủ đô"
+  },
+  {
+    "topic": "Thành phố và địa điểm du lịch",
+    "stt": 4,
+    "word": "Street",
+    "pronunciation": "strit",
+    "meaning": "Đường"
+  },
+  {
+    "topic": "Thành phố và địa điểm du lịch",
+    "stt": 5,
+    "word": "Avenue",
+    "pronunciation": "ˈævəˌnu",
+    "meaning": "Đại lộ"
+  },
+  {
+    "topic": "Thành phố và địa điểm du lịch",
+    "stt": 6,
+    "word": "Square",
+    "pronunciation": "skwɛr",
+    "meaning": "Quảng trường"
+  },
+  {
+    "topic": "Thành phố và địa điểm du lịch",
+    "stt": 7,
+    "word": "Park",
+    "pronunciation": "pɑrk",
+    "meaning": "Công viên"
+  },
+  {
+    "topic": "Thành phố và địa điểm du lịch",
+    "stt": 8,
+    "word": "Museum",
+    "pronunciation": "mjuˈziəm",
+    "meaning": "Bảo tàng"
+  },
+  {
+    "topic": "Thành phố và địa điểm du lịch",
+    "stt": 9,
+    "word": "Gallery",
+    "pronunciation": "ˈɡæləri",
+    "meaning": "Triển lãm"
+  },
+  {
+    "topic": "Thành phố và địa điểm du lịch",
+    "stt": 10,
+    "word": "Landmark",
+    "pronunciation": "ˈlændmɑrk",
+    "meaning": "Địa danh"
+  },
+  {
+    "topic": "Thành phố và địa điểm du lịch",
+    "stt": 11,
+    "word": "Cathedral",
+    "pronunciation": "kəˈθiːdrəl",
+    "meaning": "Nhà thờ chính"
+  },
+  {
+    "topic": "Thành phố và địa điểm du lịch",
+    "stt": 12,
+    "word": "Temple",
+    "pronunciation": "ˈtɛmpəl",
+    "meaning": "Đền, chùa"
+  },
+  {
+    "topic": "Thành phố và địa điểm du lịch",
+    "stt": 13,
+    "word": "Palace",
+    "pronunciation": "ˈpælɪs",
+    "meaning": "Cung điện"
+  },
+  {
+    "topic": "Thành phố và địa điểm du lịch",
+    "stt": 14,
+    "word": "Castle",
+    "pronunciation": "ˈkæsəl",
+    "meaning": "Lâu đài"
+  },
+  {
+    "topic": "Thành phố và địa điểm du lịch",
+    "stt": 15,
+    "word": "Bridge",
+    "pronunciation": "brɪdʒ",
+    "meaning": "Cầu"
+  },
+  {
+    "topic": "Thành phố và địa điểm du lịch",
+    "stt": 16,
+    "word": "Beach",
+    "pronunciation": "bitʃ",
+    "meaning": "Bãi biển"
+  },
+  {
+    "topic": "Thành phố và địa điểm du lịch",
+    "stt": 17,
+    "word": "Lake",
+    "pronunciation": "leɪk",
+    "meaning": "Hồ"
+  },
+  {
+    "topic": "Thành phố và địa điểm du lịch",
+    "stt": 18,
+    "word": "Mountain",
+    "pronunciation": "ˈmaʊntən",
+    "meaning": "Núi"
+  },
+  {
+    "topic": "Thành phố và địa điểm du lịch",
+    "stt": 19,
+    "word": "Garden",
+    "pronunciation": "ˈɡɑrdən",
+    "meaning": "Vườn"
+  },
+  {
+    "topic": "Thành phố và địa điểm du lịch",
+    "stt": 20,
+    "word": "Zoo",
+    "pronunciation": "zuː",
+    "meaning": "Sở thú"
+  },
+  {
+    "topic": "Mua sắm và mặt hàng",
+    "stt": 1,
+    "word": "Shopping",
+    "pronunciation": "ˈʃɑpɪŋ",
+    "meaning": "Mua sắm"
+  },
+  {
+    "topic": "Mua sắm và mặt hàng",
+    "stt": 2,
+    "word": "Store",
+    "pronunciation": "stɔr",
+    "meaning": "Cửa hàng"
+  },
+  {
+    "topic": "Mua sắm và mặt hàng",
+    "stt": 3,
+    "word": "Market",
+    "pronunciation": "ˈmɑrkɪt",
+    "meaning": "Chợ"
+  },
+  {
+    "topic": "Mua sắm và mặt hàng",
+    "stt": 4,
+    "word": "Mall",
+    "pronunciation": "mɔl",
+    "meaning": "Trung tâm thương mại"
+  },
+  {
+    "topic": "Mua sắm và mặt hàng",
+    "stt": 5,
+    "word": "Shop",
+    "pronunciation": "ʃɑp",
+    "meaning": "Cửa hiệu"
+  },
+  {
+    "topic": "Mua sắm và mặt hàng",
+    "stt": 6,
+    "word": "Boutique",
+    "pronunciation": "buːˈtik",
+    "meaning": "Cửa hàng thời trang"
+  },
+  {
+    "topic": "Mua sắm và mặt hàng",
+    "stt": 7,
+    "word": "Department store",
+    "pronunciation": "dɪˈpɑrtmənt stɔr",
+    "meaning": "Cửa hàng bách hóa"
+  },
+  {
+    "topic": "Mua sắm và mặt hàng",
+    "stt": 8,
+    "word": "Supermarket",
+    "pronunciation": "ˈsupərmɑrkɪt",
+    "meaning": "Siêu thị"
+  },
+  {
+    "topic": "Mua sắm và mặt hàng",
+    "stt": 9,
+    "word": "Cashier",
+    "pronunciation": "ˈkæʃɪər",
+    "meaning": "Thu ngân"
+  },
+  {
+    "topic": "Mua sắm và mặt hàng",
+    "stt": 10,
+    "word": "Sale",
+    "pronunciation": "seɪl",
+    "meaning": "Giảm giá"
+  },
+  {
+    "topic": "Mua sắm và mặt hàng",
+    "stt": 11,
+    "word": "Discount",
+    "pronunciation": "ˈdɪskaʊnt",
+    "meaning": "Chiết khấu"
+  },
+  {
+    "topic": "Mua sắm và mặt hàng",
+    "stt": 12,
+    "word": "Payment",
+    "pronunciation": "ˈpeɪmənt",
+    "meaning": "Thanh toán"
+  },
+  {
+    "topic": "Mua sắm và mặt hàng",
+    "stt": 13,
+    "word": "Receipt",
+    "pronunciation": "rɪˈsit",
+    "meaning": "Biên lai"
+  },
+  {
+    "topic": "Mua sắm và mặt hàng",
+    "stt": 14,
+    "word": "Product",
+    "pronunciation": "ˈprɒdʌkt",
+    "meaning": "Sản phẩm"
+  },
+  {
+    "topic": "Mua sắm và mặt hàng",
+    "stt": 15,
+    "word": "Brand",
+    "pronunciation": "brænd",
+    "meaning": "Thương hiệu"
+  },
+  {
+    "topic": "Mua sắm và mặt hàng",
+    "stt": 16,
+    "word": "Size",
+    "pronunciation": "saɪz",
+    "meaning": "Kích cỡ"
+  },
+  {
+    "topic": "Mua sắm và mặt hàng",
+    "stt": 17,
+    "word": "Price",
+    "pronunciation": "praɪs",
+    "meaning": "Giá"
+  },
+  {
+    "topic": "Mua sắm và mặt hàng",
+    "stt": 18,
+    "word": "Quality",
+    "pronunciation": "ˈkwɑləti",
+    "meaning": "Chất lượng"
+  },
+  {
+    "topic": "Mua sắm và mặt hàng",
+    "stt": 19,
+    "word": "Customer",
+    "pronunciation": "ˈkʌstəmər",
+    "meaning": "Khách hàng"
+  },
+  {
+    "topic": "Mua sắm và mặt hàng",
+    "stt": 20,
+    "word": "Saleperson",
+    "pronunciation": "ˈseɪlˌpɜrs(ə)n",
+    "meaning": "Nhân viên bán hàng"
+  },
+  {
+    "topic": "Công việc và ngành nghề",
+    "stt": 1,
+    "word": "Job",
+    "pronunciation": "dʒɑb",
+    "meaning": "Công việc"
+  },
+  {
+    "topic": "Công việc và ngành nghề",
+    "stt": 2,
+    "word": "Occupation",
+    "pronunciation": "ˌɑkjəˈpeɪʃən",
+    "meaning": "Nghề nghiệp"
+  },
+  {
+    "topic": "Công việc và ngành nghề",
+    "stt": 3,
+    "word": "Profession",
+    "pronunciation": "prəˈfɛʃən",
+    "meaning": "Chuyên nghiệp"
+  },
+  {
+    "topic": "Công việc và ngành nghề",
+    "stt": 4,
+    "word": "Career",
+    "pronunciation": "kəˈrɪr",
+    "meaning": "Sự nghiệp"
+  },
+  {
+    "topic": "Công việc và ngành nghề",
+    "stt": 5,
+    "word": "Employee",
+    "pronunciation": "ˌɛmplɔɪˈi",
+    "meaning": "Nhân viên"
+  },
+  {
+    "topic": "Công việc và ngành nghề",
+    "stt": 6,
+    "word": "Employer",
+    "pronunciation": "ɪmˈplɔɪər",
+    "meaning": "Chủ doanh nghiệp"
+  },
+  {
+    "topic": "Công việc và ngành nghề",
+    "stt": 7,
+    "word": "Manager",
+    "pronunciation": "ˈmænɪdʒər",
+    "meaning": "Quản lý"
+  },
+  {
+    "topic": "Công việc và ngành nghề",
+    "stt": 8,
+    "word": "Supervisor",
+    "pronunciation": "ˈsupərˌvaɪzər",
+    "meaning": "Giám sát"
+  },
+  {
+    "topic": "Công việc và ngành nghề",
+    "stt": 9,
+    "word": "Colleague",
+    "pronunciation": "ˈkɑːliːɡ",
+    "meaning": "Đồng nghiệp"
+  },
+  {
+    "topic": "Công việc và ngành nghề",
+    "stt": 10,
+    "word": "Team",
+    "pronunciation": "tim",
+    "meaning": "Nhóm"
+  },
+  {
+    "topic": "Công việc và ngành nghề",
+    "stt": 11,
+    "word": "Project",
+    "pronunciation": "ˈprɒdʒɛkt",
+    "meaning": "Dự án"
+  },
+  {
+    "topic": "Công việc và ngành nghề",
+    "stt": 12,
+    "word": "Deadline",
+    "pronunciation": "ˈdɛdˌlaɪn",
+    "meaning": "Hạn chót"
+  },
+  {
+    "topic": "Công việc và ngành nghề",
+    "stt": 13,
+    "word": "Meeting",
+    "pronunciation": "ˈmitɪŋ",
+    "meaning": "Cuộc họp"
+  },
+  {
+    "topic": "Công việc và ngành nghề",
+    "stt": 14,
+    "word": "Presentation",
+    "pronunciation": "ˌprɛzənˈteɪʃən",
+    "meaning": "Bài thuyết trình"
+  },
+  {
+    "topic": "Công việc và ngành nghề",
+    "stt": 15,
+    "word": "Resume",
+    "pronunciation": "ˈrɛzjum",
+    "meaning": "Sơ yếu lý lịch"
+  },
+  {
+    "topic": "Công việc và ngành nghề",
+    "stt": 16,
+    "word": "Interview",
+    "pronunciation": "ˈɪntərˌvju",
+    "meaning": "Phỏng vấn"
+  },
+  {
+    "topic": "Công việc và ngành nghề",
+    "stt": 17,
+    "word": "Salary",
+    "pronunciation": "ˈsæləri",
+    "meaning": "Lương"
+  },
+  {
+    "topic": "Công việc và ngành nghề",
+    "stt": 18,
+    "word": "Promotion",
+    "pronunciation": "prəˈmoʊʃən",
+    "meaning": "Thăng tiến"
+  },
+  {
+    "topic": "Công việc và ngành nghề",
+    "stt": 19,
+    "word": "Retirement",
+    "pronunciation": "rɪˈtaɪərmənt",
+    "meaning": "Về hưu"
+  },
+  {
+    "topic": "Công việc và ngành nghề",
+    "stt": 20,
+    "word": "Work-life balance",
+    "pronunciation": "wɜrk-laɪf ˈbæləns",
+    "meaning": "Cân bằng công việc và cuộc sống"
+  },
+  {
+    "topic": "Thể thao và hoạt động thể dục",
+    "stt": 1,
+    "word": "Sports",
+    "pronunciation": "spɔrts",
+    "meaning": "Thể thao"
+  },
+  {
+    "topic": "Thể thao và hoạt động thể dục",
+    "stt": 2,
+    "word": "Football",
+    "pronunciation": "ˈfʊtˌbɔl",
+    "meaning": "Bóng đá"
+  },
+  {
+    "topic": "Thể thao và hoạt động thể dục",
+    "stt": 3,
+    "word": "Basketball",
+    "pronunciation": "ˈbæskətˌbɔl",
+    "meaning": "Bóng rổ"
+  },
+  {
+    "topic": "Thể thao và hoạt động thể dục",
+    "stt": 4,
+    "word": "Tennis",
+    "pronunciation": "ˈtɛnɪs",
+    "meaning": "Tennis"
+  },
+  {
+    "topic": "Thể thao và hoạt động thể dục",
+    "stt": 5,
+    "word": "Swimming",
+    "pronunciation": "ˈswɪmɪŋ",
+    "meaning": "Bơi lội"
+  },
+  {
+    "topic": "Thể thao và hoạt động thể dục",
+    "stt": 6,
+    "word": "Running",
+    "pronunciation": "ˈrʌnɪŋ",
+    "meaning": "Chạy bộ"
+  },
+  {
+    "topic": "Thể thao và hoạt động thể dục",
+    "stt": 7,
+    "word": "Cycling",
+    "pronunciation": "ˈsaɪklɪŋ",
+    "meaning": "Đạp xe"
+  },
+  {
+    "topic": "Thể thao và hoạt động thể dục",
+    "stt": 8,
+    "word": "Gymnastics",
+    "pronunciation": "dʒɪmˈnæstɪks",
+    "meaning": "Thể dục dụng cụ"
+  },
+  {
+    "topic": "Thể thao và hoạt động thể dục",
+    "stt": 9,
+    "word": "Yoga",
+    "pronunciation": "ˈjoʊɡə",
+    "meaning": "Yoga"
+  },
+  {
+    "topic": "Thể thao và hoạt động thể dục",
+    "stt": 10,
+    "word": "Boxing",
+    "pronunciation": "ˈbɑksɪŋ",
+    "meaning": "Quyền Anh"
+  },
+  {
+    "topic": "Thể thao và hoạt động thể dục",
+    "stt": 11,
+    "word": "Golf",
+    "pronunciation": "ɡɒlf",
+    "meaning": "Golf"
+  },
+  {
+    "topic": "Thể thao và hoạt động thể dục",
+    "stt": 12,
+    "word": "Volleyball",
+    "pronunciation": "ˈvɑliˌbɔl",
+    "meaning": "Bóng chuyền"
+  },
+  {
+    "topic": "Thể thao và hoạt động thể dục",
+    "stt": 13,
+    "word": "Table tennis",
+    "pronunciation": "ˈteɪbəl ˈtɛnɪs",
+    "meaning": "Bóng bàn"
+  },
+  {
+    "topic": "Thể thao và hoạt động thể dục",
+    "stt": 14,
+    "word": "Athletics",
+    "pronunciation": "æθˈlɛtɪks",
+    "meaning": "Điền kinh"
+  },
+  {
+    "topic": "Thể thao và hoạt động thể dục",
+    "stt": 15,
+    "word": "Badminton",
+    "pronunciation": "ˈbædmɪntən",
+    "meaning": "Cầu lông"
+  },
+  {
+    "topic": "Thể thao và hoạt động thể dục",
+    "stt": 16,
+    "word": "Hiking",
+    "pronunciation": "ˈhaɪkɪŋ",
+    "meaning": "Leo núi"
+  },
+  {
+    "topic": "Thể thao và hoạt động thể dục",
+    "stt": 17,
+    "word": "Skiing",
+    "pronunciation": "ˈskiːɪŋ",
+    "meaning": "Trượt tuyết"
+  },
+  {
+    "topic": "Thể thao và hoạt động thể dục",
+    "stt": 18,
+    "word": "Surfing",
+    "pronunciation": "ˈsɜrfɪŋ",
+    "meaning": "Lướt sóng"
+  },
+  {
+    "topic": "Thể thao và hoạt động thể dục",
+    "stt": 19,
+    "word": "Sailing",
+    "pronunciation": "ˈseɪlɪŋ",
+    "meaning": "Đi thuyền"
+  },
+  {
+    "topic": "Thể thao và hoạt động thể dục",
+    "stt": 20,
+    "word": "Martial arts",
+    "pronunciation": "ˈmɑrʃəl ɑrts",
+    "meaning": "Võ thuật"
+  },
+  {
+    "topic": "Giao thông và phương tiện",
+    "stt": 1,
+    "word": "Traffic",
+    "pronunciation": "ˈtræfɪk",
+    "meaning": "Giao thông"
+  },
+  {
+    "topic": "Giao thông và phương tiện",
+    "stt": 2,
+    "word": "Vehicle",
+    "pronunciation": "ˈviːɪkəl",
+    "meaning": "Phương tiện"
+  },
+  {
+    "topic": "Giao thông và phương tiện",
+    "stt": 3,
+    "word": "Car",
+    "pronunciation": "kɑr",
+    "meaning": "Ô tô"
+  },
+  {
+    "topic": "Giao thông và phương tiện",
+    "stt": 4,
+    "word": "Motorcycle",
+    "pronunciation": "ˈmoʊtərˌsaɪkəl",
+    "meaning": "Xe máy"
+  },
+  {
+    "topic": "Giao thông và phương tiện",
+    "stt": 5,
+    "word": "Bicycle",
+    "pronunciation": "ˈbaɪsɪkəl",
+    "meaning": "Xe đạp"
+  },
+  {
+    "topic": "Giao thông và phương tiện",
+    "stt": 6,
+    "word": "Bus",
+    "pronunciation": "bʌs",
+    "meaning": "Xe buýt"
+  },
+  {
+    "topic": "Giao thông và phương tiện",
+    "stt": 7,
+    "word": "Taxi",
+    "pronunciation": "ˈtæksi",
+    "meaning": "Xe taxi"
+  },
+  {
+    "topic": "Giao thông và phương tiện",
+    "stt": 8,
+    "word": "Train",
+    "pronunciation": "treɪn",
+    "meaning": "Tàu hỏa"
+  },
+  {
+    "topic": "Giao thông và phương tiện",
+    "stt": 9,
+    "word": "Subway",
+    "pronunciation": "ˈsʌbˌweɪ",
+    "meaning": "Tàu điện ngầm"
+  },
+  {
+    "topic": "Giao thông và phương tiện",
+    "stt": 10,
+    "word": "Tram",
+    "pronunciation": "træm",
+    "meaning": "Xe điện"
+  },
+  {
+    "topic": "Giao thông và phương tiện",
+    "stt": 11,
+    "word": "Plane",
+    "pronunciation": "pleɪn",
+    "meaning": "Máy bay"
+  },
+  {
+    "topic": "Giao thông và phương tiện",
+    "stt": 12,
+    "word": "Ship",
+    "pronunciation": "ʃɪp",
+    "meaning": "Tàu biển"
+  },
+  {
+    "topic": "Giao thông và phương tiện",
+    "stt": 13,
+    "word": "Boat",
+    "pronunciation": "boʊt",
+    "meaning": "Thuyền"
+  },
+  {
+    "topic": "Giao thông và phương tiện",
+    "stt": 14,
+    "word": "Ferry",
+    "pronunciation": "ˈfɛri",
+    "meaning": "Phà"
+  },
+  {
+    "topic": "Giao thông và phương tiện",
+    "stt": 15,
+    "word": "Pedestrian",
+    "pronunciation": "pɪˈdɛstriən",
+    "meaning": "Người đi bộ"
+  },
+  {
+    "topic": "Giao thông và phương tiện",
+    "stt": 16,
+    "word": "Intersection",
+    "pronunciation": "ˌɪntərˈsɛkʃən",
+    "meaning": "Ngã tư"
+  },
+  {
+    "topic": "Giao thông và phương tiện",
+    "stt": 17,
+    "word": "Traffic light",
+    "pronunciation": "ˈtræfɪk laɪt",
+    "meaning": "Đèn giao thông"
+  },
+  {
+    "topic": "Giao thông và phương tiện",
+    "stt": 18,
+    "word": "Crosswalk",
+    "pronunciation": "ˈkrɔswɔk",
+    "meaning": "Vạch dành cho người đi bộ"
+  },
+  {
+    "topic": "Giao thông và phương tiện",
+    "stt": 19,
+    "word": "Highway",
+    "pronunciation": "ˈhaɪweɪ",
+    "meaning": "Đường cao tốc"
+  },
+  {
+    "topic": "Giao thông và phương tiện",
+    "stt": 20,
+    "word": "Parking",
+    "pronunciation": "ˈpɑrkɪŋ",
+    "meaning": "Bãi đỗ xe"
+  },
+  {
+    "topic": "Sức khỏe và y tế",
+    "stt": 1,
+    "word": "Health",
+    "pronunciation": "hɛlθ",
+    "meaning": "Sức khỏe"
+  },
+  {
+    "topic": "Sức khỏe và y tế",
+    "stt": 2,
+    "word": "Wellness",
+    "pronunciation": "ˈwɛlnəs",
+    "meaning": "Sự khỏe mạnh"
+  },
+  {
+    "topic": "Sức khỏe và y tế",
+    "stt": 3,
+    "word": "Doctor",
+    "pronunciation": "ˈdɑktər",
+    "meaning": "Bác sĩ"
+  },
+  {
+    "topic": "Sức khỏe và y tế",
+    "stt": 4,
+    "word": "Nurse",
+    "pronunciation": "nɜrs",
+    "meaning": "Y tá"
+  },
+  {
+    "topic": "Sức khỏe và y tế",
+    "stt": 5,
+    "word": "Hospital",
+    "pronunciation": "ˈhɑːspɪtl",
+    "meaning": "Bệnh viện"
+  },
+  {
+    "topic": "Sức khỏe và y tế",
+    "stt": 6,
+    "word": "Clinic",
+    "pronunciation": "ˈklɪnɪk",
+    "meaning": "Phòng khám"
+  },
+  {
+    "topic": "Sức khỏe và y tế",
+    "stt": 7,
+    "word": "Patient",
+    "pronunciation": "ˈpeɪʃənt",
+    "meaning": "Bệnh nhân"
+  },
+  {
+    "topic": "Sức khỏe và y tế",
+    "stt": 8,
+    "word": "Medicine",
+    "pronunciation": "ˈmɛdəsn",
+    "meaning": "Thuốc"
+  },
+  {
+    "topic": "Sức khỏe và y tế",
+    "stt": 9,
+    "word": "Prescription",
+    "pronunciation": "prɪˈskrɪpʃən",
+    "meaning": "Đơn thuốc"
+  },
+  {
+    "topic": "Sức khỏe và y tế",
+    "stt": 10,
+    "word": "Symptom",
+    "pronunciation": "ˈsɪmptəm",
+    "meaning": "Triệu chứng"
+  },
+  {
+    "topic": "Sức khỏe và y tế",
+    "stt": 11,
+    "word": "Allergy",
+    "pronunciation": "ˈælərdʒi",
+    "meaning": "Dị ứng"
+  },
+  {
+    "topic": "Sức khỏe và y tế",
+    "stt": 12,
+    "word": "Fever",
+    "pronunciation": "ˈfiːvər",
+    "meaning": "Sốt"
+  },
+  {
+    "topic": "Sức khỏe và y tế",
+    "stt": 13,
+    "word": "Cough",
+    "pronunciation": "kɔf",
+    "meaning": "Ho"
+  },
+  {
+    "topic": "Sức khỏe và y tế",
+    "stt": 14,
+    "word": "Headache",
+    "pronunciation": "ˈhɛˌdeɪk",
+    "meaning": "Đau đầu"
+  },
+  {
+    "topic": "Sức khỏe và y tế",
+    "stt": 15,
+    "word": "Stomachache",
+    "pronunciation": "ˈstʌməkˌeɪk",
+    "meaning": "Đau bụng"
+  },
+  {
+    "topic": "Sức khỏe và y tế",
+    "stt": 16,
+    "word": "Flu",
+    "pronunciation": "flu",
+    "meaning": "Cúm"
+  },
+  {
+    "topic": "Sức khỏe và y tế",
+    "stt": 17,
+    "word": "Vaccine",
+    "pronunciation": "ˈvæksiːn",
+    "meaning": "Vắc-xin"
+  },
+  {
+    "topic": "Sức khỏe và y tế",
+    "stt": 18,
+    "word": "Check-up",
+    "pronunciation": "ˈtʃɛkˌʌp",
+    "meaning": "Kiểm tra sức khỏe"
+  },
+  {
+    "topic": "Sức khỏe và y tế",
+    "stt": 19,
+    "word": "Exercise",
+    "pronunciation": "ˈɛksərˌsaɪz",
+    "meaning": "Tập luyện"
+  },
+  {
+    "topic": "Sức khỏe và y tế",
+    "stt": 20,
+    "word": "Healthy diet",
+    "pronunciation": "ˈhɛlθi ˈdaɪət",
+    "meaning": "Chế độ ăn lành mạnh"
+  },
+  {
+    "topic": "Trường học và giáo dục",
+    "stt": 1,
+    "word": "School",
+    "pronunciation": "skul",
+    "meaning": "Trường học"
+  },
+  {
+    "topic": "Trường học và giáo dục",
+    "stt": 2,
+    "word": "Classroom",
+    "pronunciation": "ˈklæsrum",
+    "meaning": "Lớp học"
+  },
+  {
+    "topic": "Trường học và giáo dục",
+    "stt": 3,
+    "word": "Teacher",
+    "pronunciation": "ˈtitʃər",
+    "meaning": "Giáo viên"
+  },
+  {
+    "topic": "Trường học và giáo dục",
+    "stt": 4,
+    "word": "Student",
+    "pronunciation": "ˈstudənt",
+    "meaning": "Học sinh"
+  },
+  {
+    "topic": "Trường học và giáo dục",
+    "stt": 5,
+    "word": "Lesson",
+    "pronunciation": "ˈlɛsn",
+    "meaning": "Bài học"
+  },
+  {
+    "topic": "Trường học và giáo dục",
+    "stt": 6,
+    "word": "Homework",
+    "pronunciation": "ˈhoʊmˌwɜrk",
+    "meaning": "Bài tập về nhà"
+  },
+  {
+    "topic": "Trường học và giáo dục",
+    "stt": 7,
+    "word": "Exam",
+    "pronunciation": "ɪɡˈzæm",
+    "meaning": "Kỳ thi"
+  },
+  {
+    "topic": "Trường học và giáo dục",
+    "stt": 8,
+    "word": "Test",
+    "pronunciation": "tɛst",
+    "meaning": "Bài kiểm tra"
+  },
+  {
+    "topic": "Trường học và giáo dục",
+    "stt": 9,
+    "word": "Subject",
+    "pronunciation": "ˈsʌbdʒɪkt",
+    "meaning": "Môn học"
+  },
+  {
+    "topic": "Trường học và giáo dục",
+    "stt": 10,
+    "word": "Book",
+    "pronunciation": "bʊk",
+    "meaning": "Sách"
+  },
+  {
+    "topic": "Trường học và giáo dục",
+    "stt": 11,
+    "word": "Pen",
+    "pronunciation": "pɛn",
+    "meaning": "Bút"
+  },
+  {
+    "topic": "Trường học và giáo dục",
+    "stt": 12,
+    "word": "Pencil",
+    "pronunciation": "ˈpɛnsəl",
+    "meaning": "Bút chì"
+  },
+  {
+    "topic": "Trường học và giáo dục",
+    "stt": 13,
+    "word": "Eraser",
+    "pronunciation": "ɪˈreɪsər",
+    "meaning": "Cục tẩy"
+  },
+  {
+    "topic": "Trường học và giáo dục",
+    "stt": 14,
+    "word": "Calculator",
+    "pronunciation": "ˈkælkjəˌleɪtər",
+    "meaning": "Máy tính"
+  },
+  {
+    "topic": "Trường học và giáo dục",
+    "stt": 15,
+    "word": "Whiteboard",
+    "pronunciation": "waɪtˌbɔrd",
+    "meaning": "Bảng trắng"
+  },
+  {
+    "topic": "Trường học và giáo dục",
+    "stt": 16,
+    "word": "Projector",
+    "pronunciation": "prəˈdʒɛktər",
+    "meaning": "Máy chiếu"
+  },
+  {
+    "topic": "Trường học và giáo dục",
+    "stt": 17,
+    "word": "Backpack",
+    "pronunciation": "ˈbækˌpæk",
+    "meaning": "Ba lô"
+  },
+  {
+    "topic": "Trường học và giáo dục",
+    "stt": 18,
+    "word": "Uniform",
+    "pronunciation": "ˈjunəˌfɔrm",
+    "meaning": "Đồng phục"
+  },
+  {
+    "topic": "Trường học và giáo dục",
+    "stt": 19,
+    "word": "Graduation",
+    "pronunciation": "ˌɡrædʒʊˈeɪʃən",
+    "meaning": "Lễ tốt nghiệp"
+  },
+  {
+    "topic": "Trường học và giáo dục",
+    "stt": 20,
+    "word": "Education",
+    "pronunciation": "ˌɛdʒʊˈkeɪʃən",
+    "meaning": "Giáo dục"
+  },
+  {
+    "topic": "Đồ ăn và nhà hàng",
+    "stt": 1,
+    "word": "Food",
+    "pronunciation": "fud",
+    "meaning": "Đồ ăn"
+  },
+  {
+    "topic": "Đồ ăn và nhà hàng",
+    "stt": 2,
+    "word": "Meal",
+    "pronunciation": "mil",
+    "meaning": "Bữa ăn"
+  },
+  {
+    "topic": "Đồ ăn và nhà hàng",
+    "stt": 3,
+    "word": "Breakfast",
+    "pronunciation": "ˈbrɛkfəst",
+    "meaning": "Bữa sáng"
+  },
+  {
+    "topic": "Đồ ăn và nhà hàng",
+    "stt": 4,
+    "word": "Lunch",
+    "pronunciation": "lʌntʃ",
+    "meaning": "Bữa trưa"
+  },
+  {
+    "topic": "Đồ ăn và nhà hàng",
+    "stt": 5,
+    "word": "Dinner",
+    "pronunciation": "ˈdɪnər",
+    "meaning": "Bữa tối"
+  },
+  {
+    "topic": "Đồ ăn và nhà hàng",
+    "stt": 6,
+    "word": "Appetizer",
+    "pronunciation": "ˈæpɪˌtaɪzər",
+    "meaning": "Món khai vị"
+  },
+  {
+    "topic": "Đồ ăn và nhà hàng",
+    "stt": 7,
+    "word": "Main course",
+    "pronunciation": "meɪn kɔrs",
+    "meaning": "Món chính"
+  },
+  {
+    "topic": "Đồ ăn và nhà hàng",
+    "stt": 8,
+    "word": "Dessert",
+    "pronunciation": "dɪˈzɜrt",
+    "meaning": "Món tráng miệng"
+  },
+  {
+    "topic": "Đồ ăn và nhà hàng",
+    "stt": 9,
+    "word": "Beverage",
+    "pronunciation": "ˈbɛvərɪdʒ",
+    "meaning": "Đồ uống"
+  },
+  {
+    "topic": "Đồ ăn và nhà hàng",
+    "stt": 10,
+    "word": "Coffee",
+    "pronunciation": "ˈkɒfi",
+    "meaning": "Cà phê"
+  },
+  {
+    "topic": "Đồ ăn và nhà hàng",
+    "stt": 11,
+    "word": "Tea",
+    "pronunciation": "tiː",
+    "meaning": "Trà"
+  },
+  {
+    "topic": "Đồ ăn và nhà hàng",
+    "stt": 12,
+    "word": "Juice",
+    "pronunciation": "dʒus",
+    "meaning": "Nước ép"
+  },
+  {
+    "topic": "Đồ ăn và nhà hàng",
+    "stt": 13,
+    "word": "Water",
+    "pronunciation": "ˈwɔtər",
+    "meaning": "Nước"
+  },
+  {
+    "topic": "Đồ ăn và nhà hàng",
+    "stt": 14,
+    "word": "Salad",
+    "pronunciation": "ˈsæləd",
+    "meaning": "Rau trộn"
+  },
+  {
+    "topic": "Đồ ăn và nhà hàng",
+    "stt": 15,
+    "word": "Soup",
+    "pronunciation": "sup",
+    "meaning": "Canh"
+  },
+  {
+    "topic": "Đồ ăn và nhà hàng",
+    "stt": 16,
+    "word": "Sandwich",
+    "pronunciation": "ˈsændwɪtʃ",
+    "meaning": "Bánh mì kẹp"
+  },
+  {
+    "topic": "Đồ ăn và nhà hàng",
+    "stt": 17,
+    "word": "Pasta",
+    "pronunciation": "ˈpɑstə",
+    "meaning": "Mì"
+  },
+  {
+    "topic": "Đồ ăn và nhà hàng",
+    "stt": 18,
+    "word": "Steak",
+    "pronunciation": "steɪk",
+    "meaning": "Bít tết"
+  },
+  {
+    "topic": "Đồ ăn và nhà hàng",
+    "stt": 19,
+    "word": "Seafood",
+    "pronunciation": "ˈsiːˌfud",
+    "meaning": "Hải sản"
+  },
+  {
+    "topic": "Đồ ăn và nhà hàng",
+    "stt": 20,
+    "word": "Restaurant",
+    "pronunciation": "ˈrɛstərɑnt",
+    "meaning": "Nhà hàng"
+  },
+  {
+    "topic": "Môi trường",
+    "stt": 1,
+    "word": "Environment",
+    "pronunciation": "ɪnˈvaɪrənmənt",
+    "meaning": "Môi trường"
+  },
+  {
+    "topic": "Môi trường",
+    "stt": 2,
+    "word": "Nature",
+    "pronunciation": "ˈneɪtʃər",
+    "meaning": "Thiên nhiên"
+  },
+  {
+    "topic": "Môi trường",
+    "stt": 3,
+    "word": "Pollution",
+    "pronunciation": "pəˈluːʃən",
+    "meaning": "Ô nhiễm"
+  },
+  {
+    "topic": "Môi trường",
+    "stt": 4,
+    "word": "Climate",
+    "pronunciation": "ˈklaɪmət",
+    "meaning": "Khí hậu"
+  },
+  {
+    "topic": "Môi trường",
+    "stt": 5,
+    "word": "Conservation",
+    "pronunciation": "ˌkɑnsərˈveɪʃən",
+    "meaning": "Bảo tồn"
+  },
+  {
+    "topic": "Môi trường",
+    "stt": 6,
+    "word": "Recycling",
+    "pronunciation": "riːˈsaɪklɪŋ",
+    "meaning": "Tái chế"
+  },
+  {
+    "topic": "Môi trường",
+    "stt": 7,
+    "word": "Renewable",
+    "pronunciation": "rɪˈnuːərəbl",
+    "meaning": "Tái tạo"
+  },
+  {
+    "topic": "Môi trường",
+    "stt": 8,
+    "word": "Sustainable",
+    "pronunciation": "səˈsteɪnəbl",
+    "meaning": "Bền vững"
+  },
+  {
+    "topic": "Môi trường",
+    "stt": 9,
+    "word": "Biodiversity",
+    "pronunciation": "ˌbaɪoʊdɪˈvɜrsəti",
+    "meaning": "Đa dạng sinh học"
+  },
+  {
+    "topic": "Môi trường",
+    "stt": 10,
+    "word": "Ecosystem",
+    "pronunciation": "ˈiːkoʊˌsɪstəm",
+    "meaning": "Hệ sinh thái"
+  },
+  {
+    "topic": "Môi trường",
+    "stt": 11,
+    "word": "Deforestation",
+    "pronunciation": "ˌdiːˌfɔrɪˈsteɪʃən",
+    "meaning": "Tàn phá rừng"
+  },
+  {
+    "topic": "Môi trường",
+    "stt": 12,
+    "word": "Climate change",
+    "pronunciation": "ˈklaɪmət tʃeɪndʒ",
+    "meaning": "Biến đổi khí hậu"
+  },
+  {
+    "topic": "Môi trường",
+    "stt": 13,
+    "word": "Global warming",
+    "pronunciation": "ˈɡloʊbəl ˈwɔrmɪŋ",
+    "meaning": "Nóng lên toàn cầu"
+  },
+  {
+    "topic": "Môi trường",
+    "stt": 14,
+    "word": "Air pollution",
+    "pronunciation": "ɛr pəˈluːʃən",
+    "meaning": "Ô nhiễm không khí"
+  },
+  {
+    "topic": "Môi trường",
+    "stt": 15,
+    "word": "Water pollution",
+    "pronunciation": "ˈwɔtər pəˈluːʃən",
+    "meaning": "Ô nhiễm nước"
+  },
+  {
+    "topic": "Môi trường",
+    "stt": 16,
+    "word": "Waste",
+    "pronunciation": "weɪst",
+    "meaning": "Chất thải"
+  },
+  {
+    "topic": "Môi trường",
+    "stt": 17,
+    "word": "Energy",
+    "pronunciation": "ˈɛnərʤi",
+    "meaning": "Năng lượng"
+  },
+  {
+    "topic": "Môi trường",
+    "stt": 18,
+    "word": "Ozone layer",
+    "pronunciation": "ˈoʊzoʊn ˈleɪər",
+    "meaning": "Tầng ôzôn"
+  },
+  {
+    "topic": "Môi trường",
+    "stt": 19,
+    "word": "Sustainable",
+    "pronunciation": "səˈsteɪnəbl",
+    "meaning": "Bền vững"
+  },
+  {
+    "topic": "Môi trường",
+    "stt": 20,
+    "word": "Conservation",
+    "pronunciation": "ˌkɑnsərˈveɪʃən",
+    "meaning": "Bảo tồn"
+  },
+  {
+    "topic": "Công nghệ",
+    "stt": 1,
+    "word": "Technology",
+    "pronunciation": "tɛkˈnɑləʤi",
+    "meaning": "Công nghệ"
+  },
+  {
+    "topic": "Công nghệ",
+    "stt": 2,
+    "word": "Computer",
+    "pronunciation": "kəmˈpjuːtər",
+    "meaning": "Máy tính"
+  },
+  {
+    "topic": "Công nghệ",
+    "stt": 3,
+    "word": "Internet",
+    "pronunciation": "ˈɪntərnɛt",
+    "meaning": "Internet"
+  },
+  {
+    "topic": "Công nghệ",
+    "stt": 4,
+    "word": "Website",
+    "pronunciation": "ˈwɛbsaɪt",
+    "meaning": "Trang web"
+  },
+  {
+    "topic": "Công nghệ",
+    "stt": 5,
+    "word": "Software",
+    "pronunciation": "ˈsɔftwɛr",
+    "meaning": "Phần mềm"
+  },
+  {
+    "topic": "Công nghệ",
+    "stt": 6,
+    "word": "Hardware",
+    "pronunciation": "ˈhɑrdˌwɛr",
+    "meaning": "Phần cứng"
+  },
+  {
+    "topic": "Công nghệ",
+    "stt": 7,
+    "word": "Smartphone",
+    "pronunciation": "ˈsmɑrtˌfoʊn",
+    "meaning": "Điện thoại thông minh"
+  },
+  {
+    "topic": "Công nghệ",
+    "stt": 8,
+    "word": "Tablet",
+    "pronunciation": "ˈtæblət",
+    "meaning": "Máy tính bảng"
+  },
+  {
+    "topic": "Công nghệ",
+    "stt": 9,
+    "word": "App",
+    "pronunciation": "æp",
+    "meaning": "Ứng dụng"
+  },
+  {
+    "topic": "Công nghệ",
+    "stt": 10,
+    "word": "Social media",
+    "pronunciation": "ˈsoʊʃəl ˈmidiə",
+    "meaning": "Mạng xã hội"
+  },
+  {
+    "topic": "Công nghệ",
+    "stt": 11,
+    "word": "Network",
+    "pronunciation": "ˈnɛtwɜrk",
+    "meaning": "Mạng"
+  },
+  {
+    "topic": "Công nghệ",
+    "stt": 12,
+    "word": "Digital",
+    "pronunciation": "ˈdɪʤɪtl",
+    "meaning": "Kỹ thuật số"
+  },
+  {
+    "topic": "Công nghệ",
+    "stt": 13,
+    "word": "Cybersecurity",
+    "pronunciation": "ˈsaɪbərˌsikjʊrəti",
+    "meaning": "An ninh mạng"
+  },
+  {
+    "topic": "Công nghệ",
+    "stt": 14,
+    "word": "Artificial intelligence",
+    "pronunciation": "ˌɑrtəˈfɪʃəl ɪnˈtɛləʤəns",
+    "meaning": "Trí tuệ nhân tạo"
+  },
+  {
+    "topic": "Công nghệ",
+    "stt": 15,
+    "word": "Virtual reality",
+    "pronunciation": "ˈvɜrʧuəl riˈæləti",
+    "meaning": "Thực tế ảo"
+  },
+  {
+    "topic": "Công nghệ",
+    "stt": 16,
+    "word": "Cloud computing",
+    "pronunciation": "klaʊd kəmˈpjuːtɪŋ",
+    "meaning": "Điện toán đám mây"
+  },
+  {
+    "topic": "Công nghệ",
+    "stt": 17,
+    "word": "Automation",
+    "pronunciation": "ˌɑːtəˈmeɪʃən",
+    "meaning": "Tự động hóa"
+  },
+  {
+    "topic": "Công nghệ",
+    "stt": 18,
+    "word": "Robotics",
+    "pronunciation": "ˈroʊˌbɑtɪks",
+    "meaning": "Robot"
+  },
+  {
+    "topic": "Công nghệ",
+    "stt": 19,
+    "word": "Innovation",
+    "pronunciation": "ˌɪnəˈveɪʃən",
+    "meaning": "Đổi mới"
+  },
+  {
+    "topic": "Công nghệ",
+    "stt": 20,
+    "word": "Data",
+    "pronunciation": "ˈdeɪtə",
+    "meaning": "Dữ liệu"
+  },
+  {
+    "topic": "Âm nhạc",
+    "stt": 1,
+    "word": "Music",
+    "pronunciation": "ˈmjuːzɪk",
+    "meaning": "Âm nhạc"
+  },
+  {
+    "topic": "Âm nhạc",
+    "stt": 2,
+    "word": "Song",
+    "pronunciation": "sɔŋ",
+    "meaning": "Bài hát"
+  },
+  {
+    "topic": "Âm nhạc",
+    "stt": 3,
+    "word": "Singer",
+    "pronunciation": "ˈsɪŋər",
+    "meaning": "Ca sĩ"
+  },
+  {
+    "topic": "Âm nhạc",
+    "stt": 4,
+    "word": "Band",
+    "pronunciation": "bænd",
+    "meaning": "Ban nhạc"
+  },
+  {
+    "topic": "Âm nhạc",
+    "stt": 5,
+    "word": "Guitar",
+    "pronunciation": "ɡɪˈtɑr",
+    "meaning": "Đàn guitar"
+  },
+  {
+    "topic": "Âm nhạc",
+    "stt": 6,
+    "word": "Piano",
+    "pronunciation": "piˈæno",
+    "meaning": "Đàn piano"
+  },
+  {
+    "topic": "Âm nhạc",
+    "stt": 7,
+    "word": "Drum",
+    "pronunciation": "drʌm",
+    "meaning": "Trống"
+  },
+  {
+    "topic": "Âm nhạc",
+    "stt": 8,
+    "word": "Violin",
+    "pronunciation": "ˈvaɪəlɪn",
+    "meaning": "Đàn vi-ô-lông"
+  },
+  {
+    "topic": "Âm nhạc",
+    "stt": 9,
+    "word": "Flute",
+    "pronunciation": "fluːt",
+    "meaning": "Sáo"
+  },
+  {
+    "topic": "Âm nhạc",
+    "stt": 10,
+    "word": "Saxophone",
+    "pronunciation": "ˈsæksəˌfoʊn",
+    "meaning": "Kèn saxophone"
+  },
+  {
+    "topic": "Âm nhạc",
+    "stt": 11,
+    "word": "Concert",
+    "pronunciation": "ˈkɑnsərt",
+    "meaning": "Buổi hòa nhạc"
+  },
+  {
+    "topic": "Âm nhạc",
+    "stt": 12,
+    "word": "Album",
+    "pronunciation": "ˈælbəm",
+    "meaning": "Album"
+  },
+  {
+    "topic": "Âm nhạc",
+    "stt": 13,
+    "word": "Lyrics",
+    "pronunciation": "ˈlɪrɪks",
+    "meaning": "Lời bài hát"
+  },
+  {
+    "topic": "Âm nhạc",
+    "stt": 14,
+    "word": "Melody",
+    "pronunciation": "ˈmɛlədi",
+    "meaning": "Giai điệu"
+  },
+  {
+    "topic": "Âm nhạc",
+    "stt": 15,
+    "word": "Harmony",
+    "pronunciation": "ˈhɑrməni",
+    "meaning": "Sự hài hòa"
+  },
+  {
+    "topic": "Âm nhạc",
+    "stt": 16,
+    "word": "Beat",
+    "pronunciation": "bit",
+    "meaning": "Nhịp điệu"
+  },
+  {
+    "topic": "Âm nhạc",
+    "stt": 17,
+    "word": "Chorus",
+    "pronunciation": "ˈkɔrəs",
+    "meaning": "Đoạn hợp xướng"
+  },
+  {
+    "topic": "Âm nhạc",
+    "stt": 18,
+    "word": "Symphony",
+    "pronunciation": "ˈsɪmfəni",
+    "meaning": "Giao hưởng"
+  },
+  {
+    "topic": "Âm nhạc",
+    "stt": 19,
+    "word": "Genre",
+    "pronunciation": "ˈʒɑnrə",
+    "meaning": "Thể loại"
+  },
+  {
+    "topic": "Âm nhạc",
+    "stt": 20,
+    "word": "Dance",
+    "pronunciation": "dæns",
+    "meaning": "Khiêu vũ"
+  },
+  {
+    "topic": "Kinh doanh",
+    "stt": 1,
+    "word": "Business",
+    "pronunciation": "ˈbɪznɪs",
+    "meaning": "Kinh doanh"
+  },
+  {
+    "topic": "Kinh doanh",
+    "stt": 2,
+    "word": "Entrepreneur",
+    "pronunciation": "ˌɑntrəprəˈnɜr",
+    "meaning": "Doanh nhân"
+  },
+  {
+    "topic": "Kinh doanh",
+    "stt": 3,
+    "word": "Company",
+    "pronunciation": "ˈkʌmpəni",
+    "meaning": "Công ty"
+  },
+  {
+    "topic": "Kinh doanh",
+    "stt": 4,
+    "word": "Corporation",
+    "pronunciation": "ˌkɔrəˈreɪʃən",
+    "meaning": "Tập đoàn"
+  },
+  {
+    "topic": "Kinh doanh",
+    "stt": 5,
+    "word": "Startup",
+    "pronunciation": "ˈstɑrtˌʌp",
+    "meaning": "Doanh nghiệp khởi nghiệp"
+  },
+  {
+    "topic": "Kinh doanh",
+    "stt": 6,
+    "word": "Marketing",
+    "pronunciation": "ˈmɑrkɪtɪŋ",
+    "meaning": "Tiếp thị"
+  },
+  {
+    "topic": "Kinh doanh",
+    "stt": 7,
+    "word": "Sales",
+    "pronunciation": "seɪlz",
+    "meaning": "Bán hàng"
+  },
+  {
+    "topic": "Kinh doanh",
+    "stt": 8,
+    "word": "Customer",
+    "pronunciation": "ˈkʌstəmər",
+    "meaning": "Khách hàng"
+  },
+  {
+    "topic": "Kinh doanh",
+    "stt": 9,
+    "word": "Product",
+    "pronunciation": "ˈprɑdʌkt",
+    "meaning": "Sản phẩm"
+  },
+  {
+    "topic": "Kinh doanh",
+    "stt": 10,
+    "word": "Service",
+    "pronunciation": "ˈsɜrvɪs",
+    "meaning": "Dịch vụ"
+  },
+  {
+    "topic": "Kinh doanh",
+    "stt": 11,
+    "word": "Brand",
+    "pronunciation": "brænd",
+    "meaning": "Thương hiệu"
+  },
+  {
+    "topic": "Kinh doanh",
+    "stt": 12,
+    "word": "Market",
+    "pronunciation": "ˈmɑrkɪt",
+    "meaning": "Thị trường"
+  },
+  {
+    "topic": "Kinh doanh",
+    "stt": 13,
+    "word": "Finance",
+    "pronunciation": "ˈfaɪnæns",
+    "meaning": "Tài chính"
+  },
+  {
+    "topic": "Kinh doanh",
+    "stt": 14,
+    "word": "Investment",
+    "pronunciation": "ɪnˈvɛstmənt",
+    "meaning": "Đầu tư"
+  },
+  {
+    "topic": "Kinh doanh",
+    "stt": 15,
+    "word": "Profit",
+    "pronunciation": "ˈprɑfɪt",
+    "meaning": "Lợi nhuận"
+  },
+  {
+    "topic": "Kinh doanh",
+    "stt": 16,
+    "word": "Entrepreneurship",
+    "pronunciation": "ˌɑntrəprəˈnɜrʃɪp",
+    "meaning": "Tinh thần khởi nghiệp"
+  },
+  {
+    "topic": "Kinh doanh",
+    "stt": 17,
+    "word": "Strategy",
+    "pronunciation": "ˈstrætəʤi",
+    "meaning": "Chiến lược"
+  },
+  {
+    "topic": "Kinh doanh",
+    "stt": 18,
+    "word": "Networking",
+    "pronunciation": "ˈnɛtwɜrkɪŋ",
+    "meaning": "Mạng lưới"
+  },
+  {
+    "topic": "Kinh doanh",
+    "stt": 19,
+    "word": "Negotiation",
+    "pronunciation": "nɪˌgoʊʃiˈeɪʃən",
+    "meaning": "Thương lượng"
+  },
+  {
+    "topic": "Kinh doanh",
+    "stt": 20,
+    "word": "Partnership",
+    "pronunciation": "ˈpɑrtnərʃɪp",
+    "meaning": "Đối tác"
+  },
+  {
+    "topic": "Văn hóa và truyền thống",
+    "stt": 1,
+    "word": "Culture",
+    "pronunciation": "ˈkʌltʃər",
+    "meaning": "Văn hóa"
+  },
+  {
+    "topic": "Văn hóa và truyền thống",
+    "stt": 2,
+    "word": "Tradition",
+    "pronunciation": "trəˈdɪʃən",
+    "meaning": "Truyền thống"
+  },
+  {
+    "topic": "Văn hóa và truyền thống",
+    "stt": 3,
+    "word": "Heritage",
+    "pronunciation": "ˈhɛrɪtɪʤ",
+    "meaning": "Di sản"
+  },
+  {
+    "topic": "Văn hóa và truyền thống",
+    "stt": 4,
+    "word": "Custom",
+    "pronunciation": "ˈkʌstəm",
+    "meaning": "Phong tục"
+  },
+  {
+    "topic": "Văn hóa và truyền thống",
+    "stt": 5,
+    "word": "Ritual",
+    "pronunciation": "ˈrɪʧuəl",
+    "meaning": "Nghi lễ"
+  },
+  {
+    "topic": "Văn hóa và truyền thống",
+    "stt": 6,
+    "word": "Ceremony",
+    "pronunciation": "ˈsɛrəˌmoʊni",
+    "meaning": "Lễ nghi"
+  },
+  {
+    "topic": "Văn hóa và truyền thống",
+    "stt": 7,
+    "word": "Folklore",
+    "pronunciation": "ˈfoʊkˌlɔr",
+    "meaning": "Văn hóa dân gian"
+  },
+  {
+    "topic": "Văn hóa và truyền thống",
+    "stt": 8,
+    "word": "Traditional costume",
+    "pronunciation": "trəˈdɪʃənəl ˈkɑstjum",
+    "meaning": "Trang phục truyền thống"
+  },
+  {
+    "topic": "Văn hóa và truyền thống",
+    "stt": 9,
+    "word": "Dance",
+    "pronunciation": "dæns",
+    "meaning": "Vũ điệu"
+  },
+  {
+    "topic": "Văn hóa và truyền thống",
+    "stt": 10,
+    "word": "Music",
+    "pronunciation": "ˈmjuːzɪk",
+    "meaning": "Âm nhạc"
+  },
+  {
+    "topic": "Văn hóa và truyền thống",
+    "stt": 11,
+    "word": "Art",
+    "pronunciation": "ɑrt",
+    "meaning": "Nghệ thuật"
+  },
+  {
+    "topic": "Văn hóa và truyền thống",
+    "stt": 12,
+    "word": "Literature",
+    "pronunciation": "ˈlɪtərəʧər",
+    "meaning": "Văn học"
+  },
+  {
+    "topic": "Văn hóa và truyền thống",
+    "stt": 13,
+    "word": "Architecture",
+    "pronunciation": "ˈɑrkəˌtɛkʧər",
+    "meaning": "Kiến trúc"
+  },
+  {
+    "topic": "Văn hóa và truyền thống",
+    "stt": 14,
+    "word": "Sculpture",
+    "pronunciation": "ˈskʌlpʧər",
+    "meaning": "Điêu khắc"
+  },
+  {
+    "topic": "Văn hóa và truyền thống",
+    "stt": 15,
+    "word": "Painting",
+    "pronunciation": "ˈpeɪntɪŋ",
+    "meaning": "Hội hoạ"
+  },
+  {
+    "topic": "Văn hóa và truyền thống",
+    "stt": 16,
+    "word": "Tradition",
+    "pronunciation": "trəˈdɪʃən",
+    "meaning": "Truyền thống"
+  },
+  {
+    "topic": "Văn hóa và truyền thống",
+    "stt": 17,
+    "word": "Festival",
+    "pronunciation": "ˈfɛstəvəl",
+    "meaning": "Lễ hội"
+  },
+  {
+    "topic": "Văn hóa và truyền thống",
+    "stt": 18,
+    "word": "Cuisine",
+    "pronunciation": "kwɪˈzin",
+    "meaning": "Ẩm thực"
+  },
+  {
+    "topic": "Văn hóa và truyền thống",
+    "stt": 19,
+    "word": "Handicraft",
+    "pronunciation": "ˈhændikræft",
+    "meaning": "Đồ thủ công"
+  },
+  {
+    "topic": "Văn hóa và truyền thống",
+    "stt": 20,
+    "word": "Belief",
+    "pronunciation": "bɪˈlif",
+    "meaning": "Niềm tin"
+  },
+  {
+    "topic": "Nghệ thuật",
+    "stt": 1,
+    "word": "Art",
+    "pronunciation": "ɑrt",
+    "meaning": "Nghệ thuật"
+  },
+  {
+    "topic": "Nghệ thuật",
+    "stt": 2,
+    "word": "Painting",
+    "pronunciation": "ˈpeɪntɪŋ",
+    "meaning": "Hội hoạ"
+  },
+  {
+    "topic": "Nghệ thuật",
+    "stt": 3,
+    "word": "Sculpture",
+    "pronunciation": "ˈskʌlpʧər",
+    "meaning": "Điêu khắc"
+  },
+  {
+    "topic": "Nghệ thuật",
+    "stt": 4,
+    "word": "Drawing",
+    "pronunciation": "ˈdrɔɪŋ",
+    "meaning": "Vẽ"
+  },
+  {
+    "topic": "Nghệ thuật",
+    "stt": 5,
+    "word": "Sketch",
+    "pronunciation": "skɛʧ",
+    "meaning": "Bản phác thảo"
+  },
+  {
+    "topic": "Nghệ thuật",
+    "stt": 6,
+    "word": "Canvas",
+    "pronunciation": "ˈkænvəs",
+    "meaning": "Bức tranh"
+  },
+  {
+    "topic": "Nghệ thuật",
+    "stt": 7,
+    "word": "Brush",
+    "pronunciation": "brʌʃ",
+    "meaning": "Cọ"
+  },
+  {
+    "topic": "Nghệ thuật",
+    "stt": 8,
+    "word": "Palette",
+    "pronunciation": "ˈpælɪt",
+    "meaning": "Bảng màu"
+  },
+  {
+    "topic": "Nghệ thuật",
+    "stt": 9,
+    "word": "Gallery",
+    "pronunciation": "ˈgæləri",
+    "meaning": "Phòng trưng bày"
+  },
+  {
+    "topic": "Nghệ thuật",
+    "stt": 10,
+    "word": "Exhibition",
+    "pronunciation": "ˌɛksəˈbɪʃən",
+    "meaning": "Triển lãm"
+  },
+  {
+    "topic": "Nghệ thuật",
+    "stt": 11,
+    "word": "Sculptor",
+    "pronunciation": "ˈskʌlpʧər",
+    "meaning": "Nghệ sĩ điêu khắc"
+  },
+  {
+    "topic": "Nghệ thuật",
+    "stt": 12,
+    "word": "Painter",
+    "pronunciation": "ˈpeɪntər",
+    "meaning": "Họa sĩ"
+  },
+  {
+    "topic": "Nghệ thuật",
+    "stt": 13,
+    "word": "Masterpiece",
+    "pronunciation": "ˈmæstərˌpis",
+    "meaning": "Kiệt tác"
+  },
+  {
+    "topic": "Nghệ thuật",
+    "stt": 14,
+    "word": "Abstract",
+    "pronunciation": "ˈæbˌstrækt",
+    "meaning": "Trừu tượng"
+  },
+  {
+    "topic": "Nghệ thuật",
+    "stt": 15,
+    "word": "Realism",
+    "pronunciation": "ˈriəˌlɪzəm",
+    "meaning": "Chân thực"
+  },
+  {
+    "topic": "Nghệ thuật",
+    "stt": 16,
+    "word": "Portrait",
+    "pronunciation": "ˈpɔrtrɪt",
+    "meaning": "Chân dung"
+  },
+  {
+    "topic": "Nghệ thuật",
+    "stt": 17,
+    "word": "Landscape",
+    "pronunciation": "ˈlændˌskeɪp",
+    "meaning": "Phong cảnh"
+  },
+  {
+    "topic": "Nghệ thuật",
+    "stt": 18,
+    "word": "Still life",
+    "pronunciation": "stɪl laɪf",
+    "meaning": "Tự nhiên"
+  },
+  {
+    "topic": "Nghệ thuật",
+    "stt": 19,
+    "word": "Photography",
+    "pronunciation": "fəˈtɑgrəfi",
+    "meaning": "Nhiếp ảnh"
+  },
+  {
+    "topic": "Nghệ thuật",
+    "stt": 20,
+    "word": "Composition",
+    "pronunciation": "ˌkɑmpəˈzɪʃən",
+    "meaning": "Cấu trúc"
+  },
+  {
+    "topic": "Kỹ năng",
+    "stt": 1,
+    "word": "Skill",
+    "pronunciation": "skɪl",
+    "meaning": "Kỹ năng"
+  },
+  {
+    "topic": "Kỹ năng",
+    "stt": 2,
+    "word": "Communication",
+    "pronunciation": "kəˌmjunɪˈkeɪʃən",
+    "meaning": "Giao tiếp"
+  },
+  {
+    "topic": "Kỹ năng",
+    "stt": 3,
+    "word": "Leadership",
+    "pronunciation": "ˈlidərʃɪp",
+    "meaning": "Lãnh đạo"
+  },
+  {
+    "topic": "Kỹ năng",
+    "stt": 4,
+    "word": "Problem-solving",
+    "pronunciation": "ˈprɑbləm ˈsɑlvɪŋ",
+    "meaning": "Giải quyết vấn đề"
+  },
+  {
+    "topic": "Kỹ năng",
+    "stt": 5,
+    "word": "Time management",
+    "pronunciation": "taɪm ˈmænɪʤmənt",
+    "meaning": "Quản lý thời gian"
+  },
+  {
+    "topic": "Kỹ năng",
+    "stt": 6,
+    "word": "Teamwork",
+    "pronunciation": "ˈtimˌwɜrk",
+    "meaning": "Làm việc nhóm"
+  },
+  {
+    "topic": "Kỹ năng",
+    "stt": 7,
+    "word": "Adaptability",
+    "pronunciation": "əˌdæptəˈbɪləti",
+    "meaning": "Tính linh hoạt"
+  },
+  {
+    "topic": "Kỹ năng",
+    "stt": 8,
+    "word": "Critical thinking",
+    "pronunciation": "ˈkrɪtɪkəl ˈθɪŋkɪŋ",
+    "meaning": "Tư duy phản biện"
+  },
+  {
+    "topic": "Kỹ năng",
+    "stt": 9,
+    "word": "Creativity",
+    "pronunciation": "kriːeɪˈtɪvəti",
+    "meaning": "Sáng tạo"
+  },
+  {
+    "topic": "Kỹ năng",
+    "stt": 10,
+    "word": "Problem-solving",
+    "pronunciation": "ˈprɑbləm ˈsɑlvɪŋ",
+    "meaning": "Giải quyết vấn đề"
+  },
+  {
+    "topic": "Kỹ năng",
+    "stt": 11,
+    "word": "Decision-making",
+    "pronunciation": "dɪˈsɪʒən ˈmeɪkɪŋ",
+    "meaning": "Ra quyết định"
+  },
+  {
+    "topic": "Kỹ năng",
+    "stt": 12,
+    "word": "Negotiation",
+    "pronunciation": "nɪˌgoʊʃiˈeɪʃən",
+    "meaning": "Thương lượng"
+  },
+  {
+    "topic": "Kỹ năng",
+    "stt": 13,
+    "word": "Presentation",
+    "pronunciation": "ˌprɛzənˈteɪʃən",
+    "meaning": "Thuyết trình"
+  },
+  {
+    "topic": "Kỹ năng",
+    "stt": 14,
+    "word": "Public speaking",
+    "pronunciation": "ˈpʌblɪk ˈspikɪŋ",
+    "meaning": "Diễn thuyết công khai"
+  },
+  {
+    "topic": "Kỹ năng",
+    "stt": 15,
+    "word": "Problem-solving",
+    "pronunciation": "ˈprɑbləm ˈsɑlvɪŋ",
+    "meaning": "Giải quyết vấn đề"
+  },
+  {
+    "topic": "Kỹ năng",
+    "stt": 16,
+    "word": "Decision-making",
+    "pronunciation": "dɪˈsɪʒən ˈmeɪkɪŋ",
+    "meaning": "Ra quyết định"
+  },
+  {
+    "topic": "Kỹ năng",
+    "stt": 17,
+    "word": "Networking",
+    "pronunciation": "ˈnɛtwɜrkɪŋ",
+    "meaning": "Mạng lưới"
+  },
+  {
+    "topic": "Kỹ năng",
+    "stt": 18,
+    "word": "Organization",
+    "pronunciation": "ˌɔrgənɪˈzeɪʃən",
+    "meaning": "Tổ chức"
+  },
+  {
+    "topic": "Kỹ năng",
+    "stt": 19,
+    "word": "Adaptability",
+    "pronunciation": "əˌdæptəˈbɪləti",
+    "meaning": "Tính linh hoạt"
+  },
+  {
+    "topic": "Kỹ năng",
+    "stt": 20,
+    "word": "Self-motivation",
+    "pronunciation": "sɛlf ˌmoʊtəˈveɪʃən",
+    "meaning": "Tự động viên"
+  },
+  {
+    "topic": "Xã hội",
+    "stt": 1,
+    "word": "Society",
+    "pronunciation": "səˈsaɪəti",
+    "meaning": "Xã hội"
+  },
+  {
+    "topic": "Xã hội",
+    "stt": 2,
+    "word": "Community",
+    "pronunciation": "kəˈmjunəti",
+    "meaning": "Cộng đồng"
+  },
+  {
+    "topic": "Xã hội",
+    "stt": 3,
+    "word": "Culture",
+    "pronunciation": "ˈkʌltʃər",
+    "meaning": "Văn hóa"
+  },
+  {
+    "topic": "Xã hội",
+    "stt": 4,
+    "word": "Tradition",
+    "pronunciation": "trəˈdɪʃən",
+    "meaning": "Truyền thống"
+  },
+  {
+    "topic": "Xã hội",
+    "stt": 5,
+    "word": "Diversity",
+    "pronunciation": "daɪˈvɜrsəti",
+    "meaning": "Đa dạng"
+  },
+  {
+    "topic": "Xã hội",
+    "stt": 6,
+    "word": "Equality",
+    "pronunciation": "ɪˈkwɑləti",
+    "meaning": "Bình đẳng"
+  },
+  {
+    "topic": "Xã hội",
+    "stt": 7,
+    "word": "Discrimination",
+    "pronunciation": "dɪˌskrɪmɪˈneɪʃən",
+    "meaning": "Phân biệt đối xử"
+  },
+  {
+    "topic": "Xã hội",
+    "stt": 8,
+    "word": "Inclusion",
+    "pronunciation": "ɪnˈkluʒən",
+    "meaning": "Sự bao gồm"
+  },
+  {
+    "topic": "Xã hội",
+    "stt": 9,
+    "word": "Exclusion",
+    "pronunciation": "ɪksˈkluʒən",
+    "meaning": "Sự loại trừ"
+  },
+  {
+    "topic": "Xã hội",
+    "stt": 10,
+    "word": "Poverty",
+    "pronunciation": "ˈpɑvərti",
+    "meaning": "Nghèo đói"
+  },
+  {
+    "topic": "Xã hội",
+    "stt": 11,
+    "word": "Wealth",
+    "pronunciation": "wɛlθ",
+    "meaning": "Giàu có"
+  },
+  {
+    "topic": "Xã hội",
+    "stt": 12,
+    "word": "Education",
+    "pronunciation": "ˌɛdʒʊˈkeɪʃən",
+    "meaning": "Giáo dục"
+  },
+  {
+    "topic": "Xã hội",
+    "stt": 13,
+    "word": "Health",
+    "pronunciation": "hɛlθ",
+    "meaning": "Sức khỏe"
+  },
+  {
+    "topic": "Xã hội",
+    "stt": 14,
+    "word": "Environment",
+    "pronunciation": "ɪnˈvaɪrənmənt",
+    "meaning": "Môi trường"
+  },
+  {
+    "topic": "Xã hội",
+    "stt": 15,
+    "word": "Politics",
+    "pronunciation": "ˈpɑlətɪks",
+    "meaning": "Chính trị"
+  },
+  {
+    "topic": "Xã hội",
+    "stt": 16,
+    "word": "Democracy",
+    "pronunciation": "dɪˈmɑkrəsi",
+    "meaning": "Dân chủ"
+  },
+  {
+    "topic": "Xã hội",
+    "stt": 17,
+    "word": "Government",
+    "pronunciation": "ˈɡʌvərnmənt",
+    "meaning": "Chính phủ"
+  },
+  {
+    "topic": "Xã hội",
+    "stt": 18,
+    "word": "Activism",
+    "pronunciation": "ˈæktɪvɪzəm",
+    "meaning": "Hoạt động chính trị"
+  },
+  {
+    "topic": "Xã hội",
+    "stt": 19,
+    "word": "Human rights",
+    "pronunciation": "ˈhjumən raɪts",
+    "meaning": "Quyền con người"
+  },
+  {
+    "topic": "Xã hội",
+    "stt": 20,
+    "word": "Volunteer",
+    "pronunciation": "ˌvɑlənˈtɪr",
+    "meaning": "Tình nguyện viên"
+  },
+  {
+    "topic": "Tài chính – Ngân hàng",
+    "stt": 1,
+    "word": "Finance",
+    "pronunciation": "ˈfaɪnæns",
+    "meaning": "Tài chính"
+  },
+  {
+    "topic": "Tài chính – Ngân hàng",
+    "stt": 2,
+    "word": "Banking",
+    "pronunciation": "ˈbæŋkɪŋ",
+    "meaning": "Ngân hàng"
+  },
+  {
+    "topic": "Tài chính – Ngân hàng",
+    "stt": 3,
+    "word": "Account",
+    "pronunciation": "əˈkaʊnt",
+    "meaning": "Tài khoản"
+  },
+  {
+    "topic": "Tài chính – Ngân hàng",
+    "stt": 4,
+    "word": "Investment",
+    "pronunciation": "ɪnˈvɛstmənt",
+    "meaning": "Đầu tư"
+  },
+  {
+    "topic": "Tài chính – Ngân hàng",
+    "stt": 5,
+    "word": "Interest",
+    "pronunciation": "ˈɪntrəst",
+    "meaning": "Lãi suất"
+  },
+  {
+    "topic": "Tài chính – Ngân hàng",
+    "stt": 6,
+    "word": "Loan",
+    "pronunciation": "lon",
+    "meaning": "Khoản vay"
+  },
+  {
+    "topic": "Tài chính – Ngân hàng",
+    "stt": 7,
+    "word": "Mortgage",
+    "pronunciation": "ˈmɔrgɪʤ",
+    "meaning": "Thế chấp"
+  },
+  {
+    "topic": "Tài chính – Ngân hàng",
+    "stt": 8,
+    "word": "Credit",
+    "pronunciation": "ˈkrɛdɪt",
+    "meaning": "Tín dụng"
+  },
+  {
+    "topic": "Tài chính – Ngân hàng",
+    "stt": 9,
+    "word": "Debit",
+    "pronunciation": "ˈdɛbɪt",
+    "meaning": "Nợ"
+  },
+  {
+    "topic": "Tài chính – Ngân hàng",
+    "stt": 10,
+    "word": "Balance",
+    "pronunciation": "ˈbæləns",
+    "meaning": "Số dư"
+  },
+  {
+    "topic": "Tài chính – Ngân hàng",
+    "stt": 11,
+    "word": "Currency",
+    "pronunciation": "ˈkɜrənsi",
+    "meaning": "Tiền tệ"
+  },
+  {
+    "topic": "Tài chính – Ngân hàng",
+    "stt": 12,
+    "word": "Exchange rate",
+    "pronunciation": "ɪksˈtʃeɪndʒ reɪt",
+    "meaning": "Tỷ giá"
+  },
+  {
+    "topic": "Tài chính – Ngân hàng",
+    "stt": 13,
+    "word": "Stock",
+    "pronunciation": "stɑk",
+    "meaning": "Cổ phiếu"
+  },
+  {
+    "topic": "Tài chính – Ngân hàng",
+    "stt": 14,
+    "word": "Share",
+    "pronunciation": "ʃɛr",
+    "meaning": "Cổ phiếu"
+  },
+  {
+    "topic": "Tài chính – Ngân hàng",
+    "stt": 15,
+    "word": "Dividend",
+    "pronunciation": "ˈdɪvɪˌdɛnd",
+    "meaning": "Cổ tức"
+  },
+  {
+    "topic": "Tài chính – Ngân hàng",
+    "stt": 16,
+    "word": "Asset",
+    "pronunciation": "ˈæsɛt",
+    "meaning": "Tài sản"
+  },
+  {
+    "topic": "Tài chính – Ngân hàng",
+    "stt": 17,
+    "word": "Liability",
+    "pronunciation": "laɪəˈbɪləti",
+    "meaning": "Nghĩa vụ"
+  },
+  {
+    "topic": "Tài chính – Ngân hàng",
+    "stt": 18,
+    "word": "Insurance",
+    "pronunciation": "ɪnˈʃʊrəns",
+    "meaning": "Bảo hiểm"
+  },
+  {
+    "topic": "Tài chính – Ngân hàng",
+    "stt": 19,
+    "word": "Transaction",
+    "pronunciation": "trænˈzækʃən",
+    "meaning": "Giao dịch"
+  },
+  {
+    "topic": "Tài chính – Ngân hàng",
+    "stt": 20,
+    "word": "Audit",
+    "pronunciation": "ˈɔdɪt",
+    "meaning": "Kiểm toán"
+  },
+  {
+    "topic": "Pháp luật",
+    "stt": 1,
+    "word": "Law",
+    "pronunciation": "lɔ",
+    "meaning": "Pháp luật"
+  },
+  {
+    "topic": "Pháp luật",
+    "stt": 2,
+    "word": "Legal",
+    "pronunciation": "ˈligəl",
+    "meaning": "Pháp lý"
+  },
+  {
+    "topic": "Pháp luật",
+    "stt": 3,
+    "word": "Legislation",
+    "pronunciation": "ˌlɛʤɪsˈleɪʃən",
+    "meaning": "Luật pháp"
+  },
+  {
+    "topic": "Pháp luật",
+    "stt": 4,
+    "word": "Constitution",
+    "pronunciation": "ˌkɑnstəˈtuʃən",
+    "meaning": "Hiến pháp"
+  },
+  {
+    "topic": "Pháp luật",
+    "stt": 5,
+    "word": "Justice",
+    "pronunciation": "ˈʤʌstɪs",
+    "meaning": "Công lý"
+  },
+  {
+    "topic": "Pháp luật",
+    "stt": 6,
+    "word": "Court",
+    "pronunciation": "kɔrt",
+    "meaning": "Tòa án"
+  },
+  {
+    "topic": "Pháp luật",
+    "stt": 7,
+    "word": "Judge",
+    "pronunciation": "ʤʌʤ",
+    "meaning": "Thẩm phán"
+  },
+  {
+    "topic": "Pháp luật",
+    "stt": 8,
+    "word": "Lawyer",
+    "pronunciation": "ˈlɔjər",
+    "meaning": "Luật sư"
+  },
+  {
+    "topic": "Pháp luật",
+    "stt": 9,
+    "word": "Trial",
+    "pronunciation": "ˈtraɪəl",
+    "meaning": "Phiên tòa"
+  },
+  {
+    "topic": "Pháp luật",
+    "stt": 10,
+    "word": "Evidence",
+    "pronunciation": "ˈɛvɪdəns",
+    "meaning": "Bằng chứng"
+  },
+  {
+    "topic": "Pháp luật",
+    "stt": 11,
+    "word": "Crime",
+    "pronunciation": "kraɪm",
+    "meaning": "Tội ác"
+  },
+  {
+    "topic": "Pháp luật",
+    "stt": 12,
+    "word": "Punishment",
+    "pronunciation": "ˈpʌnɪʃmənt",
+    "meaning": "Hình phạt"
+  },
+  {
+    "topic": "Pháp luật",
+    "stt": 13,
+    "word": "Verdict",
+    "pronunciation": "ˈvɜrdɪkt",
+    "meaning": "Bản án"
+  },
+  {
+    "topic": "Pháp luật",
+    "stt": 14,
+    "word": "Defendant",
+    "pronunciation": "dɪˈfɛndənt",
+    "meaning": "Bị cáo"
+  },
+  {
+    "topic": "Pháp luật",
+    "stt": 15,
+    "word": "Plaintiff",
+    "pronunciation": "ˈplɛɪntɪf",
+    "meaning": "Nguyên đơn"
+  },
+  {
+    "topic": "Pháp luật",
+    "stt": 16,
+    "word": "Witness",
+    "pronunciation": "ˈwɪtnəs",
+    "meaning": "Nhân chứng"
+  },
+  {
+    "topic": "Pháp luật",
+    "stt": 17,
+    "word": "Arrest",
+    "pronunciation": "əˈrɛst",
+    "meaning": "Bắt giữ"
+  },
+  {
+    "topic": "Pháp luật",
+    "stt": 18,
+    "word": "Guilty",
+    "pronunciation": "ˈgɪlti",
+    "meaning": "Có tội"
+  },
+  {
+    "topic": "Pháp luật",
+    "stt": 19,
+    "word": "Innocent",
+    "pronunciation": "ˈɪnəsənt",
+    "meaning": "Vô tội"
+  },
+  {
+    "topic": "Pháp luật",
+    "stt": 20,
+    "word": "Civil",
+    "pronunciation": "ˈsɪvəl",
+    "meaning": "Dân sự"
+  },
+  {
+    "topic": "Giao tiếp – Truyền thông",
+    "stt": 1,
+    "word": "Communication",
+    "pronunciation": "kəˌmjunɪˈkeɪʃən",
+    "meaning": "Giao tiếp"
+  },
+  {
+    "topic": "Giao tiếp – Truyền thông",
+    "stt": 2,
+    "word": "Conversation",
+    "pronunciation": "ˌkɑnvərˈseɪʃən",
+    "meaning": "Cuộc trò chuyện"
+  },
+  {
+    "topic": "Giao tiếp – Truyền thông",
+    "stt": 3,
+    "word": "Dialogue",
+    "pronunciation": "ˈdaɪəˌlɔg",
+    "meaning": "Đối thoại"
+  },
+  {
+    "topic": "Giao tiếp – Truyền thông",
+    "stt": 4,
+    "word": "Language",
+    "pronunciation": "ˈlæŋgwɪʤ",
+    "meaning": "Ngôn ngữ"
+  },
+  {
+    "topic": "Giao tiếp – Truyền thông",
+    "stt": 5,
+    "word": "Verbal",
+    "pronunciation": "ˈvɜrbəl",
+    "meaning": "Bằng lời"
+  },
+  {
+    "topic": "Giao tiếp – Truyền thông",
+    "stt": 6,
+    "word": "Nonverbal",
+    "pronunciation": "ˌnɑnvɜrbəl",
+    "meaning": "Không lời"
+  },
+  {
+    "topic": "Giao tiếp – Truyền thông",
+    "stt": 7,
+    "word": "Gesture",
+    "pronunciation": "ˈʤɛstʃər",
+    "meaning": "Cử chỉ"
+  },
+  {
+    "topic": "Giao tiếp – Truyền thông",
+    "stt": 8,
+    "word": "Expression",
+    "pronunciation": "ɪksˈprɛʃən",
+    "meaning": "Biểu hiện"
+  },
+  {
+    "topic": "Giao tiếp – Truyền thông",
+    "stt": 9,
+    "word": "Listening",
+    "pronunciation": "ˈlɪsənɪŋ",
+    "meaning": "Lắng nghe"
+  },
+  {
+    "topic": "Giao tiếp – Truyền thông",
+    "stt": 10,
+    "word": "Speaking",
+    "pronunciation": "ˈspikɪŋ",
+    "meaning": "Nói chuyện"
+  },
+  {
+    "topic": "Giao tiếp – Truyền thông",
+    "stt": 11,
+    "word": "Writing",
+    "pronunciation": "ˈraɪtɪŋ",
+    "meaning": "Viết"
+  },
+  {
+    "topic": "Giao tiếp – Truyền thông",
+    "stt": 12,
+    "word": "Presentation",
+    "pronunciation": "ˌprɛzənˈteɪʃən",
+    "meaning": "Thuyết trình"
+  },
+  {
+    "topic": "Giao tiếp – Truyền thông",
+    "stt": 13,
+    "word": "Media",
+    "pronunciation": "ˈmidiə",
+    "meaning": "Phương tiện truyền thông"
+  },
+  {
+    "topic": "Giao tiếp – Truyền thông",
+    "stt": 14,
+    "word": "News",
+    "pronunciation": "nuz",
+    "meaning": "Tin tức"
+  },
+  {
+    "topic": "Giao tiếp – Truyền thông",
+    "stt": 15,
+    "word": "Interview",
+    "pronunciation": "ˈɪntərˌvju",
+    "meaning": "Phỏng vấn"
+  },
+  {
+    "topic": "Giao tiếp – Truyền thông",
+    "stt": 16,
+    "word": "Broadcast",
+    "pronunciation": "ˈbrɔdkæst",
+    "meaning": "Phát sóng"
+  },
+  {
+    "topic": "Giao tiếp – Truyền thông",
+    "stt": 17,
+    "word": "Advertisement",
+    "pronunciation": "ˌædvərˈtaɪzmənt",
+    "meaning": "Quảng cáo"
+  },
+  {
+    "topic": "Giao tiếp – Truyền thông",
+    "stt": 18,
+    "word": "Social media",
+    "pronunciation": "ˈsoʊʃəl ˈmidiə",
+    "meaning": "Mạng xã hội"
+  },
+  {
+    "topic": "Giao tiếp – Truyền thông",
+    "stt": 19,
+    "word": "Public relations",
+    "pronunciation": "ˈpʌblɪk rɪˈleɪʃənz",
+    "meaning": "Quan hệ công chúng"
+  },
+  {
+    "topic": "Giao tiếp – Truyền thông",
+    "stt": 20,
+    "word": "Feedback",
+    "pronunciation": "ˈfidˌbæk",
+    "meaning": "Phản hồi"
+  },
+  {
+    "topic": "Cuộc sống hàng ngày",
+    "stt": 1,
+    "word": "Daily",
+    "pronunciation": "ˈdeɪli",
+    "meaning": "Hàng ngày"
+  },
+  {
+    "topic": "Cuộc sống hàng ngày",
+    "stt": 2,
+    "word": "Routine",
+    "pronunciation": "ruˈtin",
+    "meaning": "Lịch trình"
+  },
+  {
+    "topic": "Cuộc sống hàng ngày",
+    "stt": 3,
+    "word": "Morning",
+    "pronunciation": "ˈmɔrnɪŋ",
+    "meaning": "Buổi sáng"
+  },
+  {
+    "topic": "Cuộc sống hàng ngày",
+    "stt": 4,
+    "word": "Afternoon",
+    "pronunciation": "ˌæftərˈnun",
+    "meaning": "Buổi chiều"
+  },
+  {
+    "topic": "Cuộc sống hàng ngày",
+    "stt": 5,
+    "word": "Evening",
+    "pronunciation": "ˈivnɪŋ",
+    "meaning": "Buổi tối"
+  },
+  {
+    "topic": "Cuộc sống hàng ngày",
+    "stt": 6,
+    "word": "Night",
+    "pronunciation": "naɪt",
+    "meaning": "Buổi đêm"
+  },
+  {
+    "topic": "Cuộc sống hàng ngày",
+    "stt": 7,
+    "word": "Breakfast",
+    "pronunciation": "ˈbrɛkfəst",
+    "meaning": "Bữa sáng"
+  },
+  {
+    "topic": "Cuộc sống hàng ngày",
+    "stt": 8,
+    "word": "Lunch",
+    "pronunciation": "lʌntʃ",
+    "meaning": "Bữa trưa"
+  },
+  {
+    "topic": "Cuộc sống hàng ngày",
+    "stt": 9,
+    "word": "Dinner",
+    "pronunciation": "ˈdɪnər",
+    "meaning": "Bữa tối"
+  },
+  {
+    "topic": "Cuộc sống hàng ngày",
+    "stt": 10,
+    "word": "Work",
+    "pronunciation": "wɜrk",
+    "meaning": "Công việc"
+  },
+  {
+    "topic": "Cuộc sống hàng ngày",
+    "stt": 11,
+    "word": "Study",
+    "pronunciation": "ˈstʌdi",
+    "meaning": "Học tập"
+  },
+  {
+    "topic": "Cuộc sống hàng ngày",
+    "stt": 12,
+    "word": "Exercise",
+    "pronunciation": "ˈɛksɚˌsaɪz",
+    "meaning": "Tập luyện"
+  },
+  {
+    "topic": "Cuộc sống hàng ngày",
+    "stt": 13,
+    "word": "Relax",
+    "pronunciation": "rɪˈlæks",
+    "meaning": "Thư giãn"
+  },
+  {
+    "topic": "Cuộc sống hàng ngày",
+    "stt": 14,
+    "word": "Family",
+    "pronunciation": "ˈfæməli",
+    "meaning": "Gia đình"
+  },
+  {
+    "topic": "Cuộc sống hàng ngày",
+    "stt": 15,
+    "word": "Friends",
+    "pronunciation": "frɛndz",
+    "meaning": "Bạn bè"
+  },
+  {
+    "topic": "Cuộc sống hàng ngày",
+    "stt": 16,
+    "word": "Hobbies",
+    "pronunciation": "ˈhɑbiz",
+    "meaning": "Sở thích"
+  },
+  {
+    "topic": "Cuộc sống hàng ngày",
+    "stt": 17,
+    "word": "Entertainment",
+    "pronunciation": "ˌɛntərˈteɪnmənt",
+    "meaning": "Giải trí"
+  },
+  {
+    "topic": "Cuộc sống hàng ngày",
+    "stt": 18,
+    "word": "Shopping",
+    "pronunciation": "ˈʃɑpɪŋ",
+    "meaning": "Mua sắm"
+  },
+  {
+    "topic": "Cuộc sống hàng ngày",
+    "stt": 19,
+    "word": "Relaxation",
+    "pronunciation": "ˌriːlækˈseɪʃən",
+    "meaning": "Sự thư giãn"
+  },
+  {
+    "topic": "Cuộc sống hàng ngày",
+    "stt": 20,
+    "word": "Sleep",
+    "pronunciation": "slip",
+    "meaning": "Giấc ngủ"
+  },
+  {
+    "topic": "Cảm xúc – Tâm lý",
+    "stt": 1,
+    "word": "Emotion",
+    "pronunciation": "ɪˈmoʊʃən",
+    "meaning": "Cảm xúc"
+  },
+  {
+    "topic": "Cảm xúc – Tâm lý",
+    "stt": 2,
+    "word": "Feeling",
+    "pronunciation": "ˈfilɪŋ",
+    "meaning": "Cảm giác"
+  },
+  {
+    "topic": "Cảm xúc – Tâm lý",
+    "stt": 3,
+    "word": "Happy",
+    "pronunciation": "ˈhæpi",
+    "meaning": "Hạnh phúc"
+  },
+  {
+    "topic": "Cảm xúc – Tâm lý",
+    "stt": 4,
+    "word": "Sad",
+    "pronunciation": "sæd",
+    "meaning": "Buồn"
+  },
+  {
+    "topic": "Cảm xúc – Tâm lý",
+    "stt": 5,
+    "word": "Angry",
+    "pronunciation": "ˈæŋgri",
+    "meaning": "Tức giận"
+  },
+  {
+    "topic": "Cảm xúc – Tâm lý",
+    "stt": 6,
+    "word": "Excited",
+    "pronunciation": "ɪkˈsaɪtɪd",
+    "meaning": "Hào hứng"
+  },
+  {
+    "topic": "Cảm xúc – Tâm lý",
+    "stt": 7,
+    "word": "Nervous",
+    "pronunciation": "ˈnɜrvəs",
+    "meaning": "Lo lắng"
+  },
+  {
+    "topic": "Cảm xúc – Tâm lý",
+    "stt": 8,
+    "word": "Surprised",
+    "pronunciation": "sərˈpraɪzd",
+    "meaning": "Ngạc nhiên"
+  },
+  {
+    "topic": "Cảm xúc – Tâm lý",
+    "stt": 9,
+    "word": "Fear",
+    "pronunciation": "fɪr",
+    "meaning": "Sợ hãi"
+  },
+  {
+    "topic": "Cảm xúc – Tâm lý",
+    "stt": 10,
+    "word": "Love",
+    "pronunciation": "lʌv",
+    "meaning": "Tình yêu"
+  },
+  {
+    "topic": "Cảm xúc – Tâm lý",
+    "stt": 11,
+    "word": "Hate",
+    "pronunciation": "heɪt",
+    "meaning": "Ghét bỏ"
+  },
+  {
+    "topic": "Cảm xúc – Tâm lý",
+    "stt": 12,
+    "word": "Joy",
+    "pronunciation": "ʤɔɪ",
+    "meaning": "Vui mừng"
+  },
+  {
+    "topic": "Cảm xúc – Tâm lý",
+    "stt": 13,
+    "word": "Sorrow",
+    "pronunciation": "ˈsɑroʊ",
+    "meaning": "Đau buồn"
+  },
+  {
+    "topic": "Cảm xúc – Tâm lý",
+    "stt": 14,
+    "word": "Anxiety",
+    "pronunciation": "æŋˈzaɪəti",
+    "meaning": "Lo lắng"
+  },
+  {
+    "topic": "Cảm xúc – Tâm lý",
+    "stt": 15,
+    "word": "Confidence",
+    "pronunciation": "ˈkɑnfɪdəns",
+    "meaning": "Tự tin"
+  },
+  {
+    "topic": "Cảm xúc – Tâm lý",
+    "stt": 16,
+    "word": "Stress",
+    "pronunciation": "strɛs",
+    "meaning": "căng thẳng"
+  },
+  {
+    "topic": "Cảm xúc – Tâm lý",
+    "stt": 17,
+    "word": "Loneliness",
+    "pronunciation": "ˈloʊnlinɪs",
+    "meaning": "Cô đơn"
+  },
+  {
+    "topic": "Cảm xúc – Tâm lý",
+    "stt": 18,
+    "word": "Disgust",
+    "pronunciation": "dɪsˈgʌst",
+    "meaning": "Chán ghét"
+  },
+  {
+    "topic": "Cảm xúc – Tâm lý",
+    "stt": 19,
+    "word": "Surprise",
+    "pronunciation": "sərˈpraɪz",
+    "meaning": "Sự ngạc nhiên"
+  },
+  {
+    "topic": "Cảm xúc – Tâm lý",
+    "stt": 20,
+    "word": "Happiness",
+    "pronunciation": "ˈhæpinəs",
+    "meaning": "Hạnh phúc"
+  },
+  {
+    "topic": "Tình yêu – Mối quan hệ",
+    "stt": 1,
+    "word": "Love",
+    "pronunciation": "lʌv",
+    "meaning": "Tình yêu"
+  },
+  {
+    "topic": "Tình yêu – Mối quan hệ",
+    "stt": 2,
+    "word": "Relationship",
+    "pronunciation": "rɪˈleɪʃənʃɪp",
+    "meaning": "Mối quan hệ"
+  },
+  {
+    "topic": "Tình yêu – Mối quan hệ",
+    "stt": 3,
+    "word": "Romance",
+    "pronunciation": "roʊˈmæns",
+    "meaning": "Tình cảm"
+  },
+  {
+    "topic": "Tình yêu – Mối quan hệ",
+    "stt": 4,
+    "word": "Partner",
+    "pronunciation": "ˈpɑrtnər",
+    "meaning": "Đối tác"
+  },
+  {
+    "topic": "Tình yêu – Mối quan hệ",
+    "stt": 5,
+    "word": "Couple",
+    "pronunciation": "ˈkʌpl",
+    "meaning": "Cặp đôi"
+  },
+  {
+    "topic": "Tình yêu – Mối quan hệ",
+    "stt": 6,
+    "word": "Date",
+    "pronunciation": "deɪt",
+    "meaning": "Hẹn hò"
+  },
+  {
+    "topic": "Tình yêu – Mối quan hệ",
+    "stt": 7,
+    "word": "Marriage",
+    "pronunciation": "ˈmɛrɪʤ",
+    "meaning": "Hôn nhân"
+  },
+  {
+    "topic": "Tình yêu – Mối quan hệ",
+    "stt": 8,
+    "word": "Wedding",
+    "pronunciation": "ˈwɛdɪŋ",
+    "meaning": "Đám cưới"
+  },
+  {
+    "topic": "Tình yêu – Mối quan hệ",
+    "stt": 9,
+    "word": "Engaged",
+    "pronunciation": "ɪnˈgeɪʤd",
+    "meaning": "Đính hôn"
+  },
+  {
+    "topic": "Tình yêu – Mối quan hệ",
+    "stt": 10,
+    "word": "Breakup",
+    "pronunciation": "ˈbreɪkʌp",
+    "meaning": "Chia tay"
+  },
+  {
+    "topic": "Tình yêu – Mối quan hệ",
+    "stt": 11,
+    "word": "Heart",
+    "pronunciation": "hɑrt",
+    "meaning": "Trái tim"
+  },
+  {
+    "topic": "Tình yêu – Mối quan hệ",
+    "stt": 12,
+    "word": "Passion",
+    "pronunciation": "ˈpæʃən",
+    "meaning": "Đam mê"
+  },
+  {
+    "topic": "Tình yêu – Mối quan hệ",
+    "stt": 13,
+    "word": "Trust",
+    "pronunciation": "trʌst",
+    "meaning": "Lòng tin"
+  },
+  {
+    "topic": "Tình yêu – Mối quan hệ",
+    "stt": 14,
+    "word": "Loyalty",
+    "pronunciation": "ˈlɔɪəlti",
+    "meaning": "Sự trung thành"
+  },
+  {
+    "topic": "Tình yêu – Mối quan hệ",
+    "stt": 15,
+    "word": "Jealousy",
+    "pronunciation": "ˈʤɛləsi",
+    "meaning": "Ghen tỵ"
+  },
+  {
+    "topic": "Tình yêu – Mối quan hệ",
+    "stt": 16,
+    "word": "Intimacy",
+    "pronunciation": "ˈɪntəməsi",
+    "meaning": "Sự thân mật"
+  },
+  {
+    "topic": "Tình yêu – Mối quan hệ",
+    "stt": 17,
+    "word": "Commitment",
+    "pronunciation": "kəˈmɪtmənt",
+    "meaning": "Sự cam kết"
+  },
+  {
+    "topic": "Tình yêu – Mối quan hệ",
+    "stt": 18,
+    "word": "Support",
+    "pronunciation": "səˈpɔrt",
+    "meaning": "Sự hỗ trợ"
+  },
+  {
+    "topic": "Tình yêu – Mối quan hệ",
+    "stt": 19,
+    "word": "Respect",
+    "pronunciation": "rɪˈspɛkt",
+    "meaning": "Sự tôn trọng"
+  },
+  {
+    "topic": "Tình yêu – Mối quan hệ",
+    "stt": 20,
+    "word": "Understanding",
+    "pronunciation": "ˌʌndərˈstændɪŋ",
+    "meaning": "Sự hiểu biết"
+  }
+]
