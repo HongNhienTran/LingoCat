@@ -73,7 +73,7 @@ export default function HomePage() {
     const targetId = deckId || activeDeck?.id || decks[0]?.id;
     if (targetId) {
       soundEngine.playLaser();
-      router.push(`/game/${targetId}`);
+      router.push(`/game/${targetId}?mode=${selectedGameId}`);
     }
   };
 

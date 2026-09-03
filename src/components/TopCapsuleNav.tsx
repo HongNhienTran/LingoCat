@@ -25,8 +25,8 @@ export const GAME_MODES: GameModeInfo[] = [
   {
     id: 'cyber_runner',
     name: 'Cyber Runner',
-    badge: 'LC-02',
-    status: 'coming_soon',
+    badge: 'LC-02 (Runner)',
+    status: 'active',
     icon: '🏃',
     tagline: 'Dodge incorrect doors and dash through right definitions',
   },
@@ -41,8 +41,8 @@ export const GAME_MODES: GameModeInfo[] = [
   {
     id: 'pvp_arena',
     name: '1v1 PvP Arena',
-    badge: 'Realtime',
-    status: 'coming_soon',
+    badge: 'Realtime ⚔️',
+    status: 'active',
     icon: '⚔️',
     tagline: 'Live multiplayer duel powered by Supabase Realtime',
   },

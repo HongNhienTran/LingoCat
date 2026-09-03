@@ -1,17 +1,24 @@
 'use client';
 
 import React, { useEffect, useState, use } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { MeteorDefenderCanvas } from '@/components/game/MeteorDefenderCanvas';
-import { useDeckStore } from '@/stores/useDeckStore';
+import { CyberRunnerCanvas } from '@/components/game/CyberRunnerCanvas';
+import { PvpArenaCanvas } from '@/components/game/PvpArenaCanvas';
 import { MOCK_DECKS, MOCK_WORDS } from '@/lib/mock-data';
 import { Deck, Word } from '@/types/database.types';
 import { createClient } from '@/lib/supabase/client';
 
-export default function GamePage({ params }: { params: Promise<{ deckId: string }> }) {
+export default function GamePage({
+  params,
+}: {
+  params: Promise<{ deckId: string }>;
+}) {
   const resolvedParams = use(params);
   const deckId = resolvedParams.deckId;
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const gameMode = searchParams.get('mode') || 'meteor_defender';
 
   const [deck, setDeck] = useState<Deck | null>(null);
   const [words, setWords] = useState<Word[]>([]);
@@ -57,7 +64,7 @@ export default function GamePage({ params }: { params: Promise<{ deckId: string 
 
   if (loading) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen bg-[#F3F4F6] text-[#121316]">
+      <div className="flex flex-col items-center justify-center min-h-screen bg-[#121316] text-white">
         <div className="w-12 h-12 border-4 border-[#FF4820] border-t-transparent rounded-full animate-spin mb-4" />
         <p className="text-sm font-mono text-[#FF4820] font-bold">Initializing LingoCat Arena 🐾...</p>
       </div>
@@ -66,16 +73,24 @@ export default function GamePage({ params }: { params: Promise<{ deckId: string 
 
   if (!deck || words.length === 0) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen bg-[#F3F4F6] text-[#121316] p-6 text-center">
+      <div className="flex flex-col items-center justify-center min-h-screen bg-[#121316] text-white p-6 text-center">
         <p className="text-lg font-bold text-rose-500 mb-4">No vocabulary found for this deck!</p>
         <button
           onClick={() => router.push('/')}
-          className="px-6 py-2.5 rounded-full bg-[#121316] text-white text-xs font-bold"
+          className="px-6 py-2.5 rounded-full bg-white text-[#121316] text-xs font-bold"
         >
           Back to Lobby
         </button>
       </div>
     );
+  }
+
+  if (gameMode === 'cyber_runner') {
+    return <CyberRunnerCanvas deck={deck} words={words} />;
+  }
+
+  if (gameMode === 'pvp_arena') {
+    return <PvpArenaCanvas deck={deck} words={words} />;
   }
 
   return <MeteorDefenderCanvas deck={deck} words={words} />;

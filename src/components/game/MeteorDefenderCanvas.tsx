@@ -93,6 +93,7 @@ export function MeteorDefenderCanvas({ deck, words }: MeteorDefenderProps) {
 
   // Mode: 'typing' | 'choice'
   const [gameMode, setGameMode] = useState<'typing' | 'choice'>('typing');
+  const [gameSpeed, setGameSpeed] = useState<'slow' | 'normal' | 'fast'>('slow');
   const [activeChoiceOptions, setActiveChoiceOptions] = useState<string[]>([]);
   const [targetMeteorForChoice, setTargetMeteorForChoice] = useState<Meteor | null>(null);
 
@@ -282,7 +283,8 @@ export function MeteorDefenderCanvas({ deck, words }: MeteorDefenderProps) {
 
       // Spawn Meteors Timer
       spawnTimerRef.current += 1;
-      const spawnInterval = isFreezeActive ? 220 : 130;
+      const baseInterval = gameSpeed === 'slow' ? 240 : gameSpeed === 'fast' ? 100 : 160;
+      const spawnInterval = isFreezeActive ? baseInterval * 1.6 : baseInterval;
       if (spawnTimerRef.current > spawnInterval) {
         spawnMeteor();
         spawnTimerRef.current = 0;
@@ -313,7 +315,8 @@ export function MeteorDefenderCanvas({ deck, words }: MeteorDefenderProps) {
       });
 
       // Update & Render Meteors
-      const speedMultiplier = isFreezeActive ? 0.3 : 1;
+      const userSpeedMult = gameSpeed === 'slow' ? 0.5 : gameSpeed === 'fast' ? 1.4 : 1.0;
+      const speedMultiplier = (isFreezeActive ? 0.3 : 1) * userSpeedMult;
 
       for (let i = meteorsRef.current.length - 1; i >= 0; i--) {
         const m = meteorsRef.current[i];
@@ -640,8 +643,36 @@ export function MeteorDefenderCanvas({ deck, words }: MeteorDefenderProps) {
           </div>
         </div>
 
-        {/* Right: Game Mode Switcher & Power-up Quick Bar */}
+        {/* Right: Game Speed & Mode Switcher */}
         <div className="flex items-center gap-3 pointer-events-auto">
+          {/* Speed Selector Pill */}
+          <div className="flex bg-white/10 backdrop-blur-md p-1 rounded-full border border-white/20 text-xs font-bold">
+            <button
+              onClick={() => setGameSpeed('slow')}
+              className={`px-3 py-1 rounded-full transition-all ${
+                gameSpeed === 'slow' ? 'bg-[#FF4820] text-white shadow-sm' : 'text-gray-300 hover:text-white'
+              }`}
+            >
+              🐢 Slow
+            </button>
+            <button
+              onClick={() => setGameSpeed('normal')}
+              className={`px-3 py-1 rounded-full transition-all ${
+                gameSpeed === 'normal' ? 'bg-[#FF4820] text-white shadow-sm' : 'text-gray-300 hover:text-white'
+              }`}
+            >
+              ⚡ Normal
+            </button>
+            <button
+              onClick={() => setGameSpeed('fast')}
+              className={`px-3 py-1 rounded-full transition-all ${
+                gameSpeed === 'fast' ? 'bg-[#FF4820] text-white shadow-sm' : 'text-gray-300 hover:text-white'
+              }`}
+            >
+              🚀 Fast
+            </button>
+          </div>
+
           {/* Nuke Button */}
           <button
             onClick={triggerNuke}
