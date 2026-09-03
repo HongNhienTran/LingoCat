@@ -3,17 +3,14 @@
 import React from 'react';
 import { 
   Home, 
-  Search, 
   Gamepad2, 
   BookOpen, 
   Trophy, 
   Volume2, 
   VolumeX, 
-  Settings, 
   Sun, 
   Moon,
-  User,
-  Sparkles
+  User
 } from 'lucide-react';
 import { soundEngine } from '@/lib/audio/sound-synthesizer';
 import { useAuthStore } from '@/stores/useAuthStore';
@@ -23,9 +20,18 @@ interface SidebarNavProps {
   setActiveTab: (tab: string) => void;
   onOpenAuth: () => void;
   onOpenWordIntel?: () => void;
+  onOpenLeaderboard?: () => void;
+  onOpenProfile?: () => void;
 }
 
-export function SidebarNav({ activeTab, setActiveTab, onOpenAuth, onOpenWordIntel }: SidebarNavProps) {
+export function SidebarNav({ 
+  activeTab, 
+  setActiveTab, 
+  onOpenAuth, 
+  onOpenWordIntel,
+  onOpenLeaderboard,
+  onOpenProfile
+}: SidebarNavProps) {
   const [isMuted, setIsMuted] = React.useState(false);
   const [isDarkMode, setIsDarkMode] = React.useState(false);
   const { user, profile } = useAuthStore();
@@ -39,7 +45,7 @@ export function SidebarNav({ activeTab, setActiveTab, onOpenAuth, onOpenWordInte
     { id: 'home', icon: Home, label: 'Lobby Home' },
     { id: 'games', icon: Gamepad2, label: 'Battle Modes' },
     { id: 'intel', icon: BookOpen, label: 'Vocabulary Intel', action: onOpenWordIntel },
-    { id: 'ranking', icon: Trophy, label: 'Leaderboard' },
+    { id: 'ranking', icon: Trophy, label: 'Leaderboard', action: onOpenLeaderboard },
   ];
 
   return (
@@ -93,9 +99,16 @@ export function SidebarNav({ activeTab, setActiveTab, onOpenAuth, onOpenWordInte
       {/* Center User Capsule */}
       <div className="my-2">
         <button
-          onClick={onOpenAuth}
+          onClick={() => {
+            soundEngine.playPowerUp();
+            if (user) {
+              onOpenProfile?.();
+            } else {
+              onOpenAuth();
+            }
+          }}
           className="w-10 h-10 rounded-full bg-gradient-to-tr from-[#FF4820] to-orange-400 p-[2px] shadow-sm hover:scale-105 transition-transform"
-          title={user ? profile?.display_name || 'Profile' : 'Sign in / Profile'}
+          title={user ? profile?.display_name || 'Profile Dashboard' : 'Sign in / Profile'}
         >
           <div className="w-full h-full rounded-full bg-white flex items-center justify-center overflow-hidden">
             {profile?.avatar_url ? (

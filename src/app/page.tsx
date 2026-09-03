@@ -4,24 +4,22 @@ import React, { useEffect, useState, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { 
-  Sparkles, 
   ArrowUpRight, 
   ChevronLeft, 
   ChevronRight, 
   Volume2, 
-  Gamepad2, 
   BookOpen, 
   Flame, 
-  Trophy, 
   Layers, 
   Zap,
-  Play,
-  Crosshair
+  Play
 } from 'lucide-react';
 import { SidebarNav } from '@/components/SidebarNav';
-import { TopCapsuleNav, GAME_MODES, GameModeInfo } from '@/components/TopCapsuleNav';
+import { TopCapsuleNav, GAME_MODES } from '@/components/TopCapsuleNav';
 import { WordPreviewModal } from '@/components/WordPreviewModal';
 import { AuthModal } from '@/components/AuthModal';
+import { LeaderboardModal } from '@/components/LeaderboardModal';
+import { ProfileDashboardModal } from '@/components/ProfileDashboardModal';
 import { useDeckStore } from '@/stores/useDeckStore';
 import { useAuthStore } from '@/stores/useAuthStore';
 import { soundEngine } from '@/lib/audio/sound-synthesizer';
@@ -29,7 +27,7 @@ import { Deck, Word } from '@/types/database.types';
 
 export default function HomePage() {
   const router = useRouter();
-  const { decks, fetchDecks, isLoading } = useDeckStore();
+  const { decks, fetchDecks } = useDeckStore();
   const { user, profile } = useAuthStore();
 
   const [selectedGameId, setSelectedGameId] = useState('meteor_defender');
@@ -40,6 +38,8 @@ export default function HomePage() {
   const [sidebarTab, setSidebarTab] = useState('home');
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
   const [isAuthOpen, setIsAuthOpen] = useState(false);
+  const [isLeaderboardOpen, setIsLeaderboardOpen] = useState(false);
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [previewWords, setPreviewWords] = useState<Word[]>([]);
 
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -122,7 +122,7 @@ export default function HomePage() {
 
   return (
     <div className="atmospheric-bg min-h-screen w-full flex flex-col items-center justify-center p-3 md:p-6 lg:p-8 select-none">
-      {/* Outer Branding Bar (Matches Orizon Header) */}
+      {/* Outer Branding Bar */}
       <div className="w-full max-w-[1520px] flex items-center justify-between px-6 py-2 text-xs font-bold text-gray-500 tracking-wider uppercase mb-1">
         <div className="flex items-center gap-2">
           <span className="text-[#121316]">LINGOCAT</span>
@@ -139,7 +139,7 @@ export default function HomePage() {
       </div>
 
       {/* ========================================================================= */}
-      {/* MAIN CAPSULE FRAME CONTAINER (Fixed Viewport Capsule) */}
+      {/* MAIN CAPSULE FRAME CONTAINER */}
       {/* ========================================================================= */}
       <main className="w-full max-w-[1520px] h-[92vh] max-h-[960px] min-h-[720px] bg-white rounded-[44px] capsule-shadow border border-white/80 flex flex-col md:flex-row p-3 md:p-5 gap-3 md:gap-5 relative overflow-hidden">
         {/* Left Floating Sidebar Dock */}
@@ -148,6 +148,8 @@ export default function HomePage() {
           setActiveTab={setSidebarTab}
           onOpenAuth={() => setIsAuthOpen(true)}
           onOpenWordIntel={() => handleOpenWordIntel()}
+          onOpenLeaderboard={() => setIsLeaderboardOpen(true)}
+          onOpenProfile={() => setIsProfileOpen(true)}
         />
 
         {/* Right Main Content Area */}
@@ -163,11 +165,9 @@ export default function HomePage() {
             onQuickPlay={() => handleStartGame()}
           />
 
-          {/* ===================================================================== */}
           {/* HERO CANVAS VIEWPORT */}
-          {/* ===================================================================== */}
           <section className="flex-1 relative rounded-[36px] overflow-hidden bg-[#121316] text-white flex flex-col justify-between p-6 md:p-8 shadow-inner group">
-            {/* Background Mascot Banner Image with Ambient Overlays */}
+            {/* Background Mascot Banner Image */}
             <div className="absolute inset-0 z-0">
               <Image
                 src="/images/Banner_Home.png"
@@ -180,7 +180,7 @@ export default function HomePage() {
               <div className="absolute inset-0 bg-gradient-to-r from-[#121316]/90 via-[#121316]/30 to-transparent" />
             </div>
 
-            {/* Top Tagline & Badge inside Hero */}
+            {/* Top Tagline & Badge */}
             <div className="relative z-10 flex items-center justify-between">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-xs font-bold text-white shadow-sm">
                 <span className="w-2 h-2 rounded-full bg-[#FF4820] animate-pulse" />
@@ -196,7 +196,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Hero Main Typography (Matches Orizon "New Way Of Living") */}
+            {/* Hero Main Typography */}
             <div className="relative z-10 my-auto max-w-xl">
               <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.05] text-white drop-shadow-sm">
                 New Way Of <br />
@@ -209,11 +209,9 @@ export default function HomePage() {
               </p>
             </div>
 
-            {/* =================================================================== */}
-            {/* FLOATING HERO SUB-CARDS (Bottom Left & Bottom Right) */}
-            {/* =================================================================== */}
+            {/* FLOATING HERO SUB-CARDS */}
             <div className="relative z-10 flex flex-col md:flex-row items-end justify-between gap-4 pt-4">
-              {/* Bottom-Left Organic White Card (Matches Orizon "Find The Perfect Place") */}
+              {/* Bottom-Left Organic White Card */}
               <div className="w-full md:w-80 p-5 rounded-[28px] bg-white text-[#121316] shadow-xl border border-white/90">
                 <span className="text-[10px] font-bold uppercase tracking-wider text-[#FF4820]">
                   Arena Statistics
@@ -235,7 +233,6 @@ export default function HomePage() {
                     </span>
                   </div>
 
-                  {/* Quick Preview trigger */}
                   <button
                     onClick={() => handleOpenWordIntel()}
                     className="px-3.5 py-1.5 rounded-full bg-[#F3F4F6] hover:bg-gray-200 text-xs font-bold text-[#121316] flex items-center gap-1.5 transition-colors"
@@ -246,7 +243,7 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* Bottom-Right Frosted Glass Card (Matches Orizon "Lunar Oasis Villa") */}
+              {/* Bottom-Right Frosted Glass Card */}
               {activeDeck && (
                 <div className="w-full md:w-96 p-5 rounded-[28px] glass-panel text-[#121316] shadow-2xl flex flex-col justify-between gap-3">
                   <div className="flex items-start justify-between">
@@ -267,7 +264,6 @@ export default function HomePage() {
                       </p>
                     </div>
 
-                    {/* Circular Big Play Button */}
                     <button
                       onClick={() => handleStartGame(activeDeck.id)}
                       className="w-12 h-12 rounded-full bg-[#FF4820] hover:bg-[#E03E1A] text-white flex items-center justify-center shadow-lg hover:scale-105 active:scale-95 transition-all shrink-0"
@@ -277,7 +273,6 @@ export default function HomePage() {
                     </button>
                   </div>
 
-                  {/* Deck Specs Pill Grid */}
                   <div className="flex items-center justify-between text-[11px] font-bold text-[#121316] pt-2 border-t border-black/10">
                     <div className="flex items-center gap-1.5">
                       <Layers className="w-3.5 h-3.5 text-[#FF4820]" />
@@ -306,9 +301,7 @@ export default function HomePage() {
             </div>
           </section>
 
-          {/* ===================================================================== */}
-          {/* BOTTOM INTERACTIVE DECK CAROUSEL (Kéo chọn bộ từ) */}
-          {/* ===================================================================== */}
+          {/* BOTTOM INTERACTIVE DECK CAROUSEL */}
           <section className="h-44 shrink-0 flex flex-col justify-between py-1">
             <div className="flex items-center justify-between px-1">
               <div className="flex items-center gap-2">
@@ -320,7 +313,6 @@ export default function HomePage() {
                 </span>
               </div>
 
-              {/* Scroll buttons */}
               <div className="flex items-center gap-1.5">
                 <button
                   onClick={() => scrollCarousel('left')}
@@ -339,7 +331,6 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Horizontal Drag/Scroll Container */}
             <div
               ref={carouselRef}
               className="flex items-center gap-3.5 overflow-x-auto custom-scrollbar pb-2 pt-1"
@@ -442,6 +433,18 @@ export default function HomePage() {
 
       {/* Auth Modal */}
       {isAuthOpen && <AuthModal onClose={() => setIsAuthOpen(false)} />}
+
+      {/* Realtime Leaderboard Modal */}
+      <LeaderboardModal
+        isOpen={isLeaderboardOpen}
+        onClose={() => setIsLeaderboardOpen(false)}
+      />
+
+      {/* Personal Profile & Analytics Modal */}
+      <ProfileDashboardModal
+        isOpen={isProfileOpen}
+        onClose={() => setIsProfileOpen(false)}
+      />
     </div>
   );
 }
