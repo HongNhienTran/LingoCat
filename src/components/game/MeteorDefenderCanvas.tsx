@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
-import { Heart, RotateCcw, ArrowLeft, Trophy, Flame, ShieldAlert } from 'lucide-react';
+import { Heart, RotateCcw, ArrowLeft, Trophy, Flame, ShieldAlert, Snowflake, Shield, Zap, Swords } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { Deck, Word } from '@/types/database.types';
 import { soundEngine } from '@/lib/audio/sound-synthesizer';
@@ -20,6 +20,16 @@ interface Meteor {
   isTargeted: boolean;
   typedChars: number;
   color: string;
+  isGold?: boolean;
+}
+
+interface PowerUpItem {
+  id: string;
+  type: 'freeze' | 'shield' | 'nuke';
+  x: number;
+  y: number;
+  speed: number;
+  icon: string;
 }
 
 interface Particle {
@@ -60,13 +70,23 @@ export function MeteorDefenderCanvas({ deck, words }: MeteorDefenderProps) {
     wordsAttempted,
     wordsCorrect,
     mistakes,
+    isFreezeActive,
+    shieldCount,
+    isFeverActive,
+    currentWave,
+    totalWaves,
+    isBossWave,
+    bossHp,
     initGame,
     startGame,
     handleCorrectHit,
     handleWrongHit,
     handleMissedWord,
+    activateFreeze,
+    addShield,
     endGame,
     resetGame,
+    setWave,
   } = useGameStore();
 
   const { addXP } = useAuthStore();
@@ -78,6 +98,7 @@ export function MeteorDefenderCanvas({ deck, words }: MeteorDefenderProps) {
 
   // References for Animation Frame loop
   const meteorsRef = useRef<Meteor[]>([]);
+  const powerUpsRef = useRef<PowerUpItem[]>([]);
   const particlesRef = useRef<Particle[]>([]);
   const lasersRef = useRef<LaserBeam[]>([]);
   const animationFrameId = useRef<number | null>(null);
@@ -90,6 +111,7 @@ export function MeteorDefenderCanvas({ deck, words }: MeteorDefenderProps) {
     startGame();
     wordsQueueRef.current = [...words].sort(() => Math.random() - 0.5);
     meteorsRef.current = [];
+    powerUpsRef.current = [];
     particlesRef.current = [];
     lasersRef.current = [];
   }, [words, initGame, startGame]);
@@ -101,38 +123,66 @@ export function MeteorDefenderCanvas({ deck, words }: MeteorDefenderProps) {
         particleCount: 120,
         spread: 80,
         origin: { y: 0.6 },
-        colors: ['#FF4820', '#121316', '#10b981', '#f59e0b'],
+        colors: ['#FF4820', '#121316', '#22D3EE', '#F59E0B'],
       });
-      const earnedXP = score + 50;
-      addXP(earnedXP, maxCombo);
 
-      // Log session to Supabase in background
-      try {
-        const supabase = createClient();
-        supabase.auth.getUser().then(({ data: { user } }) => {
-          if (user) {
-            supabase.from('game_sessions').insert({
-              user_id: user.id,
+      const earnedXP = score + 50;
+      addXP(earnedXP);
+
+      const updateSupabase = async () => {
+        try {
+          const supabase = createClient();
+          const { data: userData } = await supabase.auth.getUser();
+          if (userData?.user) {
+            await supabase.from('game_sessions').insert({
+              user_id: userData.user.id,
               deck_id: deck.id,
               game_type: 'meteor_defender',
               score,
               max_combo: maxCombo,
               words_attempted: wordsAttempted,
               words_correct: wordsCorrect,
-              accuracy_percentage: wordsAttempted > 0 ? (wordsCorrect / wordsAttempted) * 100 : 0,
+              accuracy_percentage: wordsAttempted > 0 ? (wordsCorrect / wordsAttempted) * 100 : 100,
               xp_earned: earnedXP,
-            }).then(() => {});
+            });
           }
-        });
-      } catch {}
+        } catch {}
+      };
+      updateSupabase();
     }
-  }, [isVictory, score, maxCombo, wordsAttempted, wordsCorrect, addXP, deck.id]);
+  }, [isVictory, score, maxCombo, wordsAttempted, wordsCorrect, deck.id, addXP]);
 
-  // Particle creator helper
-  const spawnExplosion = useCallback((x: number, y: number, color: string) => {
+  // Trigger Nuke Effect
+  const triggerNuke = useCallback(() => {
+    soundEngine.playExplosion();
+    // Spawn nuke particles
+    const canvas = canvasRef.current;
+    if (canvas) {
+      for (let i = 0; i < 80; i++) {
+        particlesRef.current.push({
+          x: canvas.width / 2,
+          y: canvas.height / 2,
+          vx: (Math.random() - 0.5) * 18,
+          vy: (Math.random() - 0.5) * 18,
+          alpha: 1,
+          color: '#FF4820',
+          size: Math.random() * 8 + 3,
+        });
+      }
+    }
+
+    // Destroy all current meteors
+    meteorsRef.current.forEach((m) => {
+      handleCorrectHit(m.word, 50);
+    });
+    meteorsRef.current = [];
+  }, [handleCorrectHit]);
+
+  // Create Explosion Particles
+  const createExplosion = useCallback((x: number, y: number, color = '#FF4820') => {
     for (let i = 0; i < 24; i++) {
-      const angle = Math.random() * Math.PI * 2;
-      const speed = Math.random() * 4 + 1.5;
+      const angle = (Math.PI * 2 * i) / 24;
+      const speed = Math.random() * 4 + 2;
       particlesRef.current.push({
         x,
         y,
@@ -140,298 +190,224 @@ export function MeteorDefenderCanvas({ deck, words }: MeteorDefenderProps) {
         vy: Math.sin(angle) * speed,
         alpha: 1,
         color,
-        size: Math.random() * 3 + 2,
+        size: Math.random() * 4 + 2,
       });
     }
   }, []);
 
-  // Update choices for Choice Mode
-  useEffect(() => {
-    if (gameMode === 'choice' && meteorsRef.current.length > 0) {
-      const sorted = [...meteorsRef.current].sort((a, b) => b.y - a.y);
-      const lowest = sorted[0];
-      setTargetMeteorForChoice(lowest);
+  // Spawn Power-Up Capsule when Gold Meteor is destroyed
+  const spawnPowerUp = useCallback((x: number, y: number) => {
+    const types: ('freeze' | 'shield' | 'nuke')[] = ['freeze', 'shield', 'nuke'];
+    const selectedType = types[Math.floor(Math.random() * types.length)];
+    const icons = { freeze: '❄️', shield: '🛡️', nuke: '💣' };
 
-      const correctAnswer = lowest.word.translation;
-      const distractors = lowest.word.distractors && lowest.word.distractors.length > 0
-        ? lowest.word.distractors
-        : ['Alternative Definition', 'Different Meaning', 'Not Related'];
-      
-      const allChoices = [correctAnswer, ...distractors.slice(0, 3)].sort(() => Math.random() - 0.5);
-      setActiveChoiceOptions(allChoices);
-    }
-  }, [gameMode]);
+    powerUpsRef.current.push({
+      id: Math.random().toString(),
+      type: selectedType,
+      x,
+      y,
+      speed: 1.5,
+      icon: icons[selectedType],
+    });
+  }, []);
 
-  // Keyboard handler for Typing Mode
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (isGameOver || isVictory) return;
-      const key = e.key.toUpperCase();
+  // Spawn Meteor Routine
+  const spawnMeteor = useCallback(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
 
-      if (gameMode === 'typing') {
-        if (key.length !== 1 || !/[A-Z]/.test(key)) return;
-
-        let target = meteorsRef.current.find((m) => m.isTargeted);
-
-        if (target) {
-          const expectedChar = target.word.term.charAt(target.typedChars).toUpperCase();
-          if (key === expectedChar) {
-            target.typedChars += 1;
-            soundEngine.playLaser(800 + target.typedChars * 80);
-
-            lasersRef.current.push({
-              startX: window.innerWidth / 2,
-              startY: window.innerHeight - 80,
-              targetX: target.x,
-              targetY: target.y,
-              alpha: 1,
-              color: '#FF4820',
-            });
-
-            if (target.typedChars >= target.word.term.length) {
-              spawnExplosion(target.x, target.y, '#FF4820');
-              handleCorrectHit(target.word);
-              meteorsRef.current = meteorsRef.current.filter((m) => m.id !== target?.id);
-
-              if (meteorsRef.current.length === 0 && wordsQueueRef.current.length === 0) {
-                endGame(true);
-              }
-            }
-          } else {
-            handleWrongHit(target.word, key);
-          }
-        } else {
-          const match = meteorsRef.current.find(
-            (m) => m.word.term.charAt(0).toUpperCase() === key
-          );
-          if (match) {
-            match.isTargeted = true;
-            match.typedChars = 1;
-            soundEngine.playLaser(800);
-
-            lasersRef.current.push({
-              startX: window.innerWidth / 2,
-              startY: window.innerHeight - 80,
-              targetX: match.x,
-              targetY: match.y,
-              alpha: 1,
-              color: '#FF4820',
-            });
-
-            if (match.typedChars >= match.word.term.length) {
-              spawnExplosion(match.x, match.y, '#FF4820');
-              handleCorrectHit(match.word);
-              meteorsRef.current = meteorsRef.current.filter((m) => m.id !== match.id);
-
-              if (meteorsRef.current.length === 0 && wordsQueueRef.current.length === 0) {
-                endGame(true);
-              }
-            }
-          } else {
-            soundEngine.playError();
-          }
-        }
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [gameMode, isGameOver, isVictory, handleCorrectHit, handleWrongHit, spawnExplosion, endGame]);
-
-  // Choice mode click handler
-  const handleSelectChoice = (chosenTranslation: string) => {
-    if (!targetMeteorForChoice || isGameOver || isVictory) return;
-
-    if (chosenTranslation === targetMeteorForChoice.word.translation) {
-      spawnExplosion(targetMeteorForChoice.x, targetMeteorForChoice.y, '#10b981');
-      lasersRef.current.push({
-        startX: window.innerWidth / 2,
-        startY: window.innerHeight - 80,
-        targetX: targetMeteorForChoice.x,
-        targetY: targetMeteorForChoice.y,
-        alpha: 1,
-        color: '#10b981',
-      });
-      handleCorrectHit(targetMeteorForChoice.word);
-      meteorsRef.current = meteorsRef.current.filter((m) => m.id !== targetMeteorForChoice.id);
-
-      if (meteorsRef.current.length === 0 && wordsQueueRef.current.length === 0) {
+    if (wordsQueueRef.current.length === 0) {
+      if (meteorsRef.current.length === 0) {
         endGame(true);
-      } else {
-        const sorted = [...meteorsRef.current].sort((a, b) => b.y - a.y);
-        if (sorted.length > 0) {
-          const next = sorted[0];
-          setTargetMeteorForChoice(next);
-          const correctAnswer = next.word.translation;
-          const distractors = next.word.distractors?.length > 0 ? next.word.distractors : ['Different', 'Incorrect', 'Alternative'];
-          setActiveChoiceOptions([correctAnswer, ...distractors.slice(0, 3)].sort(() => Math.random() - 0.5));
-        }
       }
-    } else {
-      handleWrongHit(targetMeteorForChoice.word, chosenTranslation);
+      return;
     }
-  };
 
-  // Main Canvas Render Loop (60 FPS)
+    const nextWord = wordsQueueRef.current.shift();
+    if (!nextWord) return;
+
+    const isGold = Math.random() < 0.15; // 15% chance for Gold Meteor
+    const meteorRadius = Math.max(36, Math.min(60, nextWord.term.length * 5 + 20));
+    const margin = meteorRadius + 20;
+    const spawnX = margin + Math.random() * (canvas.width - margin * 2);
+
+    meteorsRef.current.push({
+      id: Math.random().toString(),
+      word: nextWord,
+      x: spawnX,
+      y: -meteorRadius,
+      speed: Math.random() * 0.5 + 0.8 + (isGold ? 0.3 : 0),
+      radius: meteorRadius,
+      isTargeted: false,
+      typedChars: 0,
+      color: isGold ? '#F59E0B' : '#FFFFFF',
+      isGold,
+    });
+  }, [endGame]);
+
+  // Main 60 FPS Canvas Game Loop
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+    const handleResize = () => {
+      if (canvas.parentElement) {
+        canvas.width = canvas.parentElement.clientWidth;
+        canvas.height = canvas.parentElement.clientHeight;
+      }
     };
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
+    handleResize();
+    window.addEventListener('resize', handleResize);
 
-    let lastTime = performance.now();
+    const updateAndRender = () => {
+      if (isGameOver || isVictory) return;
 
-    const render = (time: number) => {
-      const dt = (time - lastTime) / 1000;
-      lastTime = time;
-
+      // Clear Canvas
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Clean Modern Off-White Canvas Background
-      ctx.fillStyle = '#F3F4F6';
+      // Starfield Parallax Effect
+      ctx.fillStyle = 'rgba(18, 19, 22, 0.95)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      // Minimalist Grid Pattern
-      ctx.strokeStyle = 'rgba(0, 0, 0, 0.03)';
-      ctx.lineWidth = 1;
-      const gridSize = 40;
-      for (let x = 0; x < canvas.width; x += gridSize) {
-        ctx.beginPath();
-        ctx.moveTo(x, 0);
-        ctx.lineTo(x, canvas.height);
-        ctx.stroke();
-      }
-      for (let y = 0; y < canvas.height; y += gridSize) {
-        ctx.beginPath();
-        ctx.moveTo(0, y);
-        ctx.lineTo(canvas.width, y);
-        ctx.stroke();
+      // Render Freeze Blue Screen Glow if Freeze is Active
+      if (isFreezeActive) {
+        ctx.fillStyle = 'rgba(34, 211, 238, 0.08)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.strokeStyle = '#22D3EE';
+        ctx.lineWidth = 4;
+        ctx.strokeRect(0, 0, canvas.width, canvas.height);
       }
 
-      // Spawn Meteors periodically
-      spawnTimerRef.current += dt;
-      if (spawnTimerRef.current > 3.0 && wordsQueueRef.current.length > 0 && meteorsRef.current.length < 5) {
+      // Spawn Meteors Timer
+      spawnTimerRef.current += 1;
+      const spawnInterval = isFreezeActive ? 220 : 130;
+      if (spawnTimerRef.current > spawnInterval) {
+        spawnMeteor();
         spawnTimerRef.current = 0;
-        const nextWord = wordsQueueRef.current.shift()!;
-        const radius = Math.max(36, nextWord.term.length * 6 + 18);
-        const minX = radius + 20;
-        const maxX = canvas.width - radius - 20;
-        const x = Math.random() * (maxX - minX) + minX;
-
-        meteorsRef.current.push({
-          id: Math.random().toString(36).substring(7),
-          word: nextWord,
-          x,
-          y: -radius,
-          speed: Math.random() * 20 + 35,
-          radius,
-          isTargeted: false,
-          typedChars: 0,
-          color: '#121316',
-        });
       }
 
-      // Update & Draw Meteors
+      const cannonX = canvas.width / 2;
+      const cannonY = canvas.height - 40;
+
+      // Update & Render Laser Beams
+      lasersRef.current.forEach((laser, idx) => {
+        ctx.save();
+        ctx.globalAlpha = laser.alpha;
+        ctx.strokeStyle = isFeverActive ? '#EC4899' : laser.color;
+        ctx.lineWidth = isFeverActive ? 6 : 3;
+        ctx.shadowColor = laser.color;
+        ctx.shadowBlur = 12;
+
+        ctx.beginPath();
+        ctx.moveTo(laser.startX, laser.startY);
+        ctx.lineTo(laser.targetX, laser.targetY);
+        ctx.stroke();
+        ctx.restore();
+
+        laser.alpha -= 0.05;
+        if (laser.alpha <= 0) {
+          lasersRef.current.splice(idx, 1);
+        }
+      });
+
+      // Update & Render Meteors
+      const speedMultiplier = isFreezeActive ? 0.3 : 1;
+
       for (let i = meteorsRef.current.length - 1; i >= 0; i--) {
         const m = meteorsRef.current[i];
-        m.y += m.speed * dt;
+        m.y += m.speed * speedMultiplier;
 
-        if (m.y + m.radius >= canvas.height - 100) {
-          spawnExplosion(m.x, m.y, '#FF4820');
-          handleMissedWord(m.word);
-          meteorsRef.current.splice(i, 1);
-          continue;
-        }
-
+        // Render Meteor Pill Card
         ctx.save();
-        ctx.translate(m.x, m.y);
+        ctx.shadowColor = m.isGold ? 'rgba(245, 158, 11, 0.6)' : m.isTargeted ? 'rgba(255, 72, 32, 0.5)' : 'rgba(0, 0, 0, 0.3)';
+        ctx.shadowBlur = m.isTargeted || m.isGold ? 20 : 10;
 
-        // Shadow & Border
-        ctx.shadowColor = m.isTargeted ? 'rgba(255, 72, 32, 0.35)' : 'rgba(0, 0, 0, 0.08)';
-        ctx.shadowBlur = m.isTargeted ? 16 : 8;
-        ctx.shadowOffsetY = 4;
+        // Card Capsule Background
+        const cardWidth = m.radius * 2.2;
+        const cardHeight = 44;
+        const cardX = m.x - cardWidth / 2;
+        const cardY = m.y - cardHeight / 2;
 
-        ctx.fillStyle = '#FFFFFF';
-        ctx.strokeStyle = m.isTargeted ? '#FF4820' : 'rgba(0, 0, 0, 0.08)';
-        ctx.lineWidth = m.isTargeted ? 2.5 : 1.5;
+        ctx.fillStyle = m.isGold ? '#FEF3C7' : m.isTargeted ? '#FFF1F0' : '#FFFFFF';
+        ctx.strokeStyle = m.isGold ? '#F59E0B' : m.isTargeted ? '#FF4820' : '#E5E7EB';
+        ctx.lineWidth = m.isTargeted || m.isGold ? 3 : 1.5;
 
-        const pillWidth = Math.max(110, m.word.term.length * 15 + 30);
-        const pillHeight = 48;
+        // Draw Rounded Pill Card
         ctx.beginPath();
-        ctx.roundRect(-pillWidth / 2, -pillHeight / 2, pillWidth, pillHeight, 24);
+        ctx.roundRect(cardX, cardY, cardWidth, cardHeight, 22);
         ctx.fill();
         ctx.stroke();
 
-        // Text rendering
-        ctx.shadowBlur = 0;
-        ctx.shadowOffsetY = 0;
+        // Render Word Term Text
+        ctx.font = 'bold 15px "Plus Jakarta Sans", sans-serif';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
 
-        const term = m.word.term.toUpperCase();
-        const typedPart = term.slice(0, m.typedChars);
-        const remainingPart = term.slice(m.typedChars);
+        const term = m.word.term;
+        const typedPart = term.substring(0, m.typedChars);
+        const remainingPart = term.substring(m.typedChars);
 
-        ctx.font = 'bold 15px monospace';
-        const totalWidth = ctx.measureText(term).width;
-        let startX = -totalWidth / 2;
-
-        if (typedPart) {
+        if (m.typedChars > 0) {
           ctx.fillStyle = '#FF4820';
-          ctx.fillText(typedPart, startX + ctx.measureText(typedPart).width / 2, -4);
-          startX += ctx.measureText(typedPart).width;
+          const typedWidth = ctx.measureText(typedPart).width;
+          const totalWidth = ctx.measureText(term).width;
+          const startX = m.x - totalWidth / 2;
+
+          ctx.textAlign = 'left';
+          ctx.fillText(typedPart, startX, m.y);
+          ctx.fillStyle = '#121316';
+          ctx.fillText(remainingPart, startX + typedWidth, m.y);
+        } else {
+          ctx.fillStyle = m.isGold ? '#B45309' : '#121316';
+          ctx.fillText(term, m.x, m.y);
         }
-
-        ctx.fillStyle = '#121316';
-        ctx.fillText(remainingPart, startX + ctx.measureText(remainingPart).width / 2, -4);
-
-        // Subtext / Translation hint
-        ctx.font = '500 11px sans-serif';
-        ctx.fillStyle = '#6B7280';
-        const subtext = m.word.phonetic || m.word.translation;
-        ctx.fillText(subtext, 0, 14);
 
         ctx.restore();
+
+        // Check Bottom Boundary Collision
+        if (m.y >= canvas.height - 60) {
+          createExplosion(m.x, m.y, '#EF4444');
+          handleMissedWord(m.word);
+          meteorsRef.current.splice(i, 1);
+        }
       }
 
-      // Update & Draw Lasers
-      for (let i = lasersRef.current.length - 1; i >= 0; i--) {
-        const l = lasersRef.current[i];
-        l.alpha -= dt * 4;
-        if (l.alpha <= 0) {
-          lasersRef.current.splice(i, 1);
-          continue;
-        }
+      // Update & Render Dropped Power-Up Capsules
+      for (let p = powerUpsRef.current.length - 1; p >= 0; p--) {
+        const item = powerUpsRef.current[p];
+        item.y += item.speed;
 
         ctx.save();
-        ctx.strokeStyle = l.color;
-        ctx.lineWidth = 3.5 * l.alpha;
-        ctx.globalAlpha = l.alpha;
+        ctx.shadowColor = 'rgba(34, 211, 238, 0.6)';
+        ctx.shadowBlur = 12;
 
+        ctx.fillStyle = '#FFFFFF';
+        ctx.strokeStyle = '#22D3EE';
+        ctx.lineWidth = 2;
         ctx.beginPath();
-        ctx.moveTo(l.startX, l.startY);
-        ctx.lineTo(l.targetX, l.targetY);
+        ctx.arc(item.x, item.y, 18, 0, Math.PI * 2);
+        ctx.fill();
         ctx.stroke();
+
+        ctx.font = '14px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(item.icon, item.x, item.y);
         ctx.restore();
+
+        // Check if power-up reaches bottom or is clicked
+        if (item.y >= canvas.height - 40) {
+          powerUpsRef.current.splice(p, 1);
+        }
       }
 
-      // Update & Draw Particles
-      for (let i = particlesRef.current.length - 1; i >= 0; i--) {
-        const p = particlesRef.current[i];
+      // Update & Render Particles
+      particlesRef.current.forEach((p, idx) => {
         p.x += p.vx;
         p.y += p.vy;
-        p.alpha -= dt * 2;
-        if (p.alpha <= 0) {
-          particlesRef.current.splice(i, 1);
-          continue;
-        }
+        p.alpha -= 0.02;
 
         ctx.save();
         ctx.globalAlpha = p.alpha;
@@ -440,92 +416,247 @@ export function MeteorDefenderCanvas({ deck, words }: MeteorDefenderProps) {
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         ctx.fill();
         ctx.restore();
-      }
 
-      // Bottom Turret Base
-      const turretX = canvas.width / 2;
-      const turretY = canvas.height - 40;
+        if (p.alpha <= 0) {
+          particlesRef.current.splice(idx, 1);
+        }
+      });
 
+      // Render Bottom Turret Cannon
       ctx.save();
       ctx.fillStyle = '#121316';
       ctx.beginPath();
-      ctx.arc(turretX, turretY + 20, 48, Math.PI, 0);
+      ctx.arc(cannonX, cannonY + 20, 36, 0, Math.PI, true);
       ctx.fill();
 
+      // Cannon Barrel
       ctx.fillStyle = '#FF4820';
-      ctx.beginPath();
-      ctx.arc(turretX, turretY + 10, 14, 0, Math.PI * 2);
-      ctx.fill();
+      ctx.fillRect(cannonX - 6, cannonY - 15, 12, 25);
       ctx.restore();
 
-      if (!isGameOver && !isVictory) {
-        animationFrameId.current = requestAnimationFrame(render);
-      }
+      animationFrameId.current = requestAnimationFrame(updateAndRender);
     };
 
-    animationFrameId.current = requestAnimationFrame(render);
+    animationFrameId.current = requestAnimationFrame(updateAndRender);
 
     return () => {
       if (animationFrameId.current) {
         cancelAnimationFrame(animationFrameId.current);
       }
-      window.removeEventListener('resize', resizeCanvas);
+      window.removeEventListener('resize', handleResize);
     };
-  }, [isGameOver, isVictory, handleMissedWord, spawnExplosion]);
+  }, [
+    isGameOver,
+    isVictory,
+    isFreezeActive,
+    isFeverActive,
+    spawnMeteor,
+    createExplosion,
+    handleMissedWord,
+  ]);
+
+  // Handle Typing Mode Input
+  useEffect(() => {
+    if (gameMode !== 'typing' || isGameOver || isVictory) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      const key = e.key.toUpperCase();
+      if (key.length !== 1 || !/[A-Z]/.test(key)) return;
+
+      const canvas = canvasRef.current;
+      if (!canvas) return;
+
+      let target = meteorsRef.current.find((m) => m.isTargeted);
+
+      if (!target) {
+        target = meteorsRef.current.find((m) => m.word.term.startsWith(key));
+        if (target) {
+          target.isTargeted = true;
+        }
+      }
+
+      if (target) {
+        const expectedChar = target.word.term[target.typedChars];
+        if (key === expectedChar) {
+          target.typedChars += 1;
+          soundEngine.playLaser();
+
+          lasersRef.current.push({
+            startX: canvas.width / 2,
+            startY: canvas.height - 40,
+            targetX: target.x,
+            targetY: target.y,
+            alpha: 1,
+            color: target.isGold ? '#F59E0B' : '#FF4820',
+          });
+
+          if (target.typedChars >= target.word.term.length) {
+            createExplosion(target.x, target.y, target.isGold ? '#F59E0B' : '#FF4820');
+            if (target.isGold) {
+              spawnPowerUp(target.x, target.y);
+            }
+            handleCorrectHit(target.word);
+            meteorsRef.current = meteorsRef.current.filter((m) => m.id !== target.id);
+          }
+        } else {
+          handleWrongHit(target.word, key);
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [gameMode, isGameOver, isVictory, createExplosion, spawnPowerUp, handleCorrectHit, handleWrongHit]);
+
+  // Handle Choice Mode Target Selection
+  useEffect(() => {
+    if (gameMode !== 'choice' || isGameOver || isVictory) return;
+
+    if (meteorsRef.current.length > 0 && !targetMeteorForChoice) {
+      const activeMeteor = meteorsRef.current[0];
+      setTargetMeteorForChoice(activeMeteor);
+
+      const correct = activeMeteor.word.translation;
+      const options = [correct];
+
+      if (activeMeteor.word.distractors && activeMeteor.word.distractors.length > 0) {
+        options.push(...activeMeteor.word.distractors.slice(0, 3));
+      } else {
+        const otherWords = words.filter((w) => w.id !== activeMeteor.word.id);
+        const randomDistractors = otherWords
+          .sort(() => Math.random() - 0.5)
+          .slice(0, 3)
+          .map((w) => w.translation);
+        options.push(...randomDistractors);
+      }
+
+      setActiveChoiceOptions(options.sort(() => Math.random() - 0.5));
+    }
+  }, [gameMode, isGameOver, isVictory, targetMeteorForChoice, words]);
+
+  const handleSelectChoice = (selectedTranslation: string) => {
+    if (!targetMeteorForChoice) return;
+    const canvas = canvasRef.current;
+
+    if (selectedTranslation === targetMeteorForChoice.word.translation) {
+      soundEngine.playLaser();
+      if (canvas) {
+        lasersRef.current.push({
+          startX: canvas.width / 2,
+          startY: canvas.height - 40,
+          targetX: targetMeteorForChoice.x,
+          targetY: targetMeteorForChoice.y,
+          alpha: 1,
+          color: '#FF4820',
+        });
+      }
+      createExplosion(targetMeteorForChoice.x, targetMeteorForChoice.y);
+      handleCorrectHit(targetMeteorForChoice.word);
+      meteorsRef.current = meteorsRef.current.filter((m) => m.id !== targetMeteorForChoice.id);
+    } else {
+      handleWrongHit(targetMeteorForChoice.word, selectedTranslation);
+    }
+
+    setTargetMeteorForChoice(null);
+    setActiveChoiceOptions([]);
+  };
+
+  // Launch Revenge Match (Focus ONLY on missed words)
+  const handleLaunchRevengeMatch = () => {
+    if (mistakes.length === 0) return;
+    const revengeWords = mistakes.map((m) => m.word);
+
+    resetGame();
+    wordsQueueRef.current = [...revengeWords].sort(() => Math.random() - 0.5);
+    meteorsRef.current = [];
+    powerUpsRef.current = [];
+    particlesRef.current = [];
+    lasersRef.current = [];
+    startGame();
+  };
 
   return (
-    <div className="relative w-full h-screen bg-[#F3F4F6] overflow-hidden select-none">
-      {/* 60 FPS HTML5 Game Canvas */}
-      <canvas ref={canvasRef} className="absolute inset-0 block w-full h-full" />
+    <div className="relative w-full h-screen bg-[#121316] overflow-hidden select-none">
+      {/* 2D Canvas Container */}
+      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full z-0 cursor-crosshair" />
 
-      {/* Top Game HUD */}
-      <div className="absolute top-6 left-6 right-6 z-20 flex items-center justify-between pointer-events-none">
-        {/* Left: Exit & Health Hearts */}
-        <div className="flex items-center gap-3 pointer-events-auto">
+      {/* Top HUD Header */}
+      <div className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between px-6 py-4 pointer-events-none">
+        {/* Left: Back Button & HP Hearts */}
+        <div className="flex items-center gap-4 pointer-events-auto">
           <button
             onClick={() => router.push('/')}
-            className="w-11 h-11 rounded-full bg-white border border-black/5 text-[#121316] flex items-center justify-center shadow-sm hover:shadow transition-all"
-            title="Return to Home"
+            className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white flex items-center justify-center transition-all"
+            title="Back to Lobby"
           >
             <ArrowLeft className="w-5 h-5" />
           </button>
 
-          <div className="flex items-center gap-1.5 bg-white border border-black/5 rounded-full px-4 py-2.5 shadow-sm">
-            {[1, 2, 3].map((heartIndex) => (
+          {/* Hearts & Shield Indicator */}
+          <div className="flex items-center gap-1.5 bg-black/40 backdrop-blur-md border border-white/10 px-3.5 py-1.5 rounded-full">
+            {Array.from({ length: 3 }).map((_, idx) => (
               <Heart
-                key={heartIndex}
-                className={`w-5 h-5 transition-all duration-300 ${
-                  heartIndex <= hp
+                key={idx}
+                className={`w-5 h-5 transition-all ${
+                  idx < hp
                     ? 'text-[#FF4820] fill-[#FF4820] scale-100'
-                    : 'text-gray-300 fill-gray-200 scale-90 opacity-40'
+                    : 'text-gray-600 fill-gray-800 scale-90 opacity-40'
                 }`}
               />
             ))}
+            {shieldCount > 0 && (
+              <div className="flex items-center gap-1 ml-1 text-cyan-400 font-bold text-xs">
+                <Shield className="w-4 h-4 fill-cyan-400 text-cyan-400" />
+                <span>+{shieldCount}</span>
+              </div>
+            )}
           </div>
         </div>
 
-        {/* Center: Score & Combo Multiplier */}
+        {/* Center: Score & Power-up Active Status */}
         <div className="flex flex-col items-center">
-          <div className="text-3xl font-black tracking-tight text-[#121316] font-mono">
+          <div className="text-3xl font-black tracking-tight text-white font-mono drop-shadow-md">
             {score.toLocaleString()}
           </div>
-          {combo > 1 && (
-            <div className="flex items-center gap-1 text-[11px] font-bold text-white bg-[#FF4820] px-3 py-0.5 rounded-full mt-1 shadow-sm animate-bounce">
-              <Flame className="w-3 h-3 fill-white" />
-              <span>COMBO {combo}X</span>
-            </div>
-          )}
+          <div className="flex items-center gap-2 mt-1">
+            {combo > 1 && (
+              <div className="flex items-center gap-1 text-[11px] font-bold text-white bg-[#FF4820] px-3 py-0.5 rounded-full shadow-sm animate-bounce">
+                <Flame className="w-3 h-3 fill-white" />
+                <span>COMBO {combo}X</span>
+              </div>
+            )}
+            {isFreezeActive && (
+              <div className="flex items-center gap-1 text-[11px] font-bold text-white bg-cyan-500 px-3 py-0.5 rounded-full shadow-sm animate-pulse">
+                <Snowflake className="w-3 h-3 text-white" />
+                <span>CRYO FREEZE</span>
+              </div>
+            )}
+            {isFeverActive && (
+              <div className="flex items-center gap-1 text-[11px] font-bold text-white bg-fuchsia-600 px-3 py-0.5 rounded-full shadow-sm animate-pulse">
+                <Zap className="w-3 h-3 fill-white" />
+                <span>FEVER 3X</span>
+              </div>
+            )}
+          </div>
         </div>
 
-        {/* Right: Mode Switcher */}
-        <div className="flex items-center gap-2 pointer-events-auto">
-          <div className="flex bg-white p-1 rounded-full border border-black/5 shadow-sm">
+        {/* Right: Game Mode Switcher & Power-up Quick Bar */}
+        <div className="flex items-center gap-3 pointer-events-auto">
+          {/* Nuke Button */}
+          <button
+            onClick={triggerNuke}
+            className="px-3.5 py-1.5 rounded-full bg-amber-500 hover:bg-amber-600 text-white text-xs font-bold flex items-center gap-1 shadow-md transition-all active:scale-95"
+            title="Quantum Nuke (Clear Screen)"
+          >
+            <span>💣 Nuke</span>
+          </button>
+
+          {/* Mode Switcher */}
+          <div className="flex bg-white/10 backdrop-blur-md p-1 rounded-full border border-white/20">
             <button
               onClick={() => setGameMode('typing')}
               className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${
-                gameMode === 'typing'
-                  ? 'bg-[#121316] text-white shadow-sm'
-                  : 'text-gray-500 hover:text-[#121316]'
+                gameMode === 'typing' ? 'bg-[#FF4820] text-white shadow-sm' : 'text-gray-300 hover:text-white'
               }`}
             >
               Typing Speed
@@ -533,9 +664,7 @@ export function MeteorDefenderCanvas({ deck, words }: MeteorDefenderProps) {
             <button
               onClick={() => setGameMode('choice')}
               className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${
-                gameMode === 'choice'
-                  ? 'bg-[#FF4820] text-white shadow-sm'
-                  : 'text-gray-500 hover:text-[#121316]'
+                gameMode === 'choice' ? 'bg-[#FF4820] text-white shadow-sm' : 'text-gray-300 hover:text-white'
               }`}
             >
               Multiple Choice
@@ -566,7 +695,7 @@ export function MeteorDefenderCanvas({ deck, words }: MeteorDefenderProps) {
 
       {/* Victory Modal */}
       {isVictory && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in zoom-in-95 duration-200">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-md animate-in zoom-in-95 duration-200">
           <div className="w-full max-w-lg bg-white rounded-[36px] p-8 shadow-2xl border border-black/5 text-center relative overflow-hidden">
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-3xl bg-[#FF4820] text-white mb-4 shadow-xl shadow-[#FF4820]/30 animate-bounce">
               <Trophy className="w-8 h-8 fill-white" />
@@ -595,6 +724,32 @@ export function MeteorDefenderCanvas({ deck, words }: MeteorDefenderProps) {
               </div>
             </div>
 
+            {/* Mistakes Review & Revenge Match */}
+            {mistakes.length > 0 && (
+              <div className="mb-6 text-left bg-orange-50 border border-orange-200 p-4 rounded-2xl">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-[11px] uppercase font-bold text-[#FF4820]">
+                    Weak Words ({mistakes.length}):
+                  </span>
+                  <button
+                    onClick={handleLaunchRevengeMatch}
+                    className="px-3 py-1 rounded-full bg-[#FF4820] text-white text-xs font-bold flex items-center gap-1 shadow-sm hover:scale-105 transition-transform"
+                  >
+                    <Swords className="w-3.5 h-3.5" />
+                    <span>Revenge Match ⚔️</span>
+                  </button>
+                </div>
+                <div className="space-y-1 max-h-28 overflow-y-auto pr-1">
+                  {mistakes.map((m, idx) => (
+                    <div key={idx} className="flex items-center justify-between text-xs text-gray-700">
+                      <span className="font-bold text-[#121316]">{m.word.term}</span>
+                      <span className="text-gray-500">{m.word.translation}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {/* Actions */}
             <div className="grid grid-cols-2 gap-3">
               <button
@@ -622,7 +777,7 @@ export function MeteorDefenderCanvas({ deck, words }: MeteorDefenderProps) {
 
       {/* Game Over Modal */}
       {isGameOver && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in zoom-in-95 duration-200">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-md animate-in zoom-in-95 duration-200">
           <div className="w-full max-w-lg bg-white rounded-[36px] p-8 shadow-2xl border border-black/5 text-center">
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-3xl bg-rose-100 mb-4">
               <ShieldAlert className="w-8 h-8 text-rose-500" />
@@ -635,13 +790,22 @@ export function MeteorDefenderCanvas({ deck, words }: MeteorDefenderProps) {
               Vocabulary meteors breached your defense perimeter
             </p>
 
-            {/* Mistakes Review */}
+            {/* Mistakes Review & Revenge Match */}
             {mistakes.length > 0 && (
-              <div className="mb-6 text-left bg-[#F3F4F6] p-4 rounded-2xl max-h-40 overflow-y-auto">
-                <span className="text-[11px] uppercase font-bold text-rose-600 tracking-wider block mb-2">
-                  Words to review ({mistakes.length}):
-                </span>
-                <div className="space-y-1.5">
+              <div className="mb-6 text-left bg-rose-50 border border-rose-200 p-4 rounded-2xl">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-[11px] uppercase font-bold text-rose-600">
+                    Missed Words ({mistakes.length}):
+                  </span>
+                  <button
+                    onClick={handleLaunchRevengeMatch}
+                    className="px-3.5 py-1.5 rounded-full bg-[#FF4820] text-white text-xs font-bold flex items-center gap-1 shadow-md hover:scale-105 transition-transform"
+                  >
+                    <Swords className="w-3.5 h-3.5" />
+                    <span>Revenge Match ⚔️</span>
+                  </button>
+                </div>
+                <div className="space-y-1.5 max-h-36 overflow-y-auto pr-1">
                   {mistakes.map((m, idx) => (
                     <div key={idx} className="flex items-center justify-between text-xs text-gray-700">
                       <span className="font-bold text-[#121316]">{m.word.term}</span>

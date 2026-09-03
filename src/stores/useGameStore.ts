@@ -15,7 +15,7 @@ interface GameState {
   isGameOver: boolean;
   isVictory: boolean;
   gameType: GameType;
-  
+
   // Player battle stats
   hp: number; // 3 hearts
   maxHp: number;
@@ -24,13 +24,24 @@ interface GameState {
   maxCombo: number;
   feverCharge: number; // 0 to 100
   isFeverActive: boolean;
-  
+
+  // Power-ups
+  isFreezeActive: boolean;
+  shieldCount: number;
+
+  // Wave System & Boss Fight
+  currentWave: number;
+  totalWaves: number;
+  isBossWave: boolean;
+  bossHp: number;
+  maxBossHp: number;
+
   // Word stats
   wordsAttempted: number;
   wordsCorrect: number;
   mistakes: GameMistake[];
   masteredWords: Word[];
-  
+
   // Active target for Typing mode
   activeTargetWordId: string | null;
   currentTypedBuffer: string;
@@ -41,7 +52,16 @@ interface GameState {
   pauseGame: () => void;
   resumeGame: () => void;
   endGame: (victory?: boolean) => void;
-  
+
+  // Power-up Actions
+  activateFreeze: () => void;
+  addShield: () => void;
+  useShield: () => boolean;
+
+  // Wave & Boss Actions
+  setWave: (wave: number, isBoss?: boolean) => void;
+  damageBoss: (damage: number) => void;
+
   // In-Game Events
   handleCorrectHit: (word: Word, scoreGain?: number) => void;
   handleWrongHit: (word: Word, attemptedInput?: string) => void;
@@ -67,6 +87,15 @@ export const useGameStore = create<GameState>((set, get) => ({
   feverCharge: 0,
   isFeverActive: false,
 
+  isFreezeActive: false,
+  shieldCount: 0,
+
+  currentWave: 1,
+  totalWaves: 3,
+  isBossWave: false,
+  bossHp: 100,
+  maxBossHp: 100,
+
   wordsAttempted: 0,
   wordsCorrect: 0,
   mistakes: [],
@@ -88,6 +117,12 @@ export const useGameStore = create<GameState>((set, get) => ({
       maxCombo: 0,
       feverCharge: 0,
       isFeverActive: false,
+      isFreezeActive: false,
+      shieldCount: 0,
+      currentWave: 1,
+      totalWaves: 3,
+      isBossWave: false,
+      bossHp: 100,
       wordsAttempted: 0,
       wordsCorrect: 0,
       mistakes: [],
@@ -117,6 +152,50 @@ export const useGameStore = create<GameState>((set, get) => ({
     });
   },
 
+  activateFreeze: () => {
+    soundEngine.playPowerUp();
+    set({ isFreezeActive: true });
+    setTimeout(() => {
+      set({ isFreezeActive: false });
+    }, 5000); // 5 seconds freeze
+  },
+
+  addShield: () => {
+    soundEngine.playPowerUp();
+    set((state) => ({ shieldCount: Math.min(3, state.shieldCount + 1) }));
+  },
+
+  useShield: () => {
+    const current = get().shieldCount;
+    if (current > 0) {
+      soundEngine.playPowerUp();
+      set({ shieldCount: current - 1 });
+      return true;
+    }
+    return false;
+  },
+
+  setWave: (wave: number, isBoss = false) => {
+    set({
+      currentWave: wave,
+      isBossWave: isBoss,
+      bossHp: isBoss ? 100 : 0,
+    });
+  },
+
+  damageBoss: (damage: number) => {
+    set((state) => {
+      const newHp = Math.max(0, state.bossHp - damage);
+      const isBossDefeated = newHp <= 0;
+      if (isBossDefeated) {
+        soundEngine.playPowerUp();
+      }
+      return {
+        bossHp: newHp,
+      };
+    });
+  },
+
   handleCorrectHit: (word: Word, scoreGain = 100) => {
     const currentCombo = get().combo + 1;
     const comboMultiplier = Math.min(4, 1 + Math.floor(currentCombo / 5));
@@ -128,13 +207,24 @@ export const useGameStore = create<GameState>((set, get) => ({
     soundEngine.playCombo(currentCombo);
     soundEngine.speakWord(word.term);
 
+    // If Boss wave, damage boss
+    if (get().isBossWave) {
+      get().damageBoss(25);
+    }
+
     set((state) => {
       const nextFever = Math.min(100, state.feverCharge + 10);
+      const shouldTriggerFever = nextFever >= 100 && !state.isFeverActive;
+
+      if (shouldTriggerFever) {
+        setTimeout(() => get().activateFeverMode(), 50);
+      }
+
       return {
         score: state.score + earnedScore,
         combo: currentCombo,
         maxCombo: Math.max(state.maxCombo, currentCombo),
-        feverCharge: nextFever,
+        feverCharge: shouldTriggerFever ? 0 : nextFever,
         wordsAttempted: state.wordsAttempted + 1,
         wordsCorrect: state.wordsCorrect + 1,
         masteredWords: [...state.masteredWords, word],
@@ -145,6 +235,11 @@ export const useGameStore = create<GameState>((set, get) => ({
   },
 
   handleWrongHit: (word: Word, attemptedInput = '') => {
+    // Check if shield absorbs collision
+    if (get().useShield()) {
+      return;
+    }
+
     soundEngine.playError();
     set((state) => {
       const newHp = Math.max(0, state.hp - 1);
@@ -163,6 +258,11 @@ export const useGameStore = create<GameState>((set, get) => ({
   },
 
   handleMissedWord: (word: Word) => {
+    // Check if shield absorbs collision
+    if (get().useShield()) {
+      return;
+    }
+
     soundEngine.playError();
     set((state) => {
       const newHp = Math.max(0, state.hp - 1);
